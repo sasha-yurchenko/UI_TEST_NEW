@@ -19,7 +19,7 @@ class SpaceMainHelper:
         self.search_wrap_geo_xpath = Locators.search_wrap_geo_xpath
 
     def click_button_cancel_geo(self):
-        return self.app.element_expected_conditions(By.XPATH, Locators.button_cancel_xpath)
+        self.app.element_to_be_clickable(By.XPATH, Locators.button_cancel_xpath)
         self.driver.find_element_by_xpath(Locators.button_cancel_xpath).click()
 
     def click_submit_geo(self):
@@ -32,11 +32,15 @@ class SpaceMainHelper:
         self.driver.find_element_by_xpath(Locators.field_name_city_xpath).send_keys(name_city)
 
     def click_name_countries(self):
+        self.app.text_to_be_present_in_element((By.XPATH, Locators.button_check_counties_xpath), "Россия")
         self.driver.find_element_by_xpath(Locators.button_check_counties_xpath).click()
 
     def click_name_city(self):
+        self.app.text_to_be_present_in_element((By.XPATH, Locators.button_check_city_xpath), "Москва")
         self.driver.find_element_by_xpath(Locators.button_check_city_xpath).click()
 
+    def wait_for_name_countries(self):
+        self.app.text_to_be_present_in_element((By.XPATH, Locators.button_check_counties_xpath), "Россия")
 
     def assertion_button_log_in(self):  # Проверяем что в данной строке имеются элементы
         return len(self.driver.find_elements_by_xpath \

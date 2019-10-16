@@ -1,4 +1,4 @@
-import time
+
 
 
 def test_assert_started_site(spacemirfixture):
@@ -7,7 +7,7 @@ def test_assert_started_site(spacemirfixture):
     assert "Spacemir" in spacemirfixture.driver.title
     # возвращает нам текущий url-адресс в строке
     assert spacemirfixture.space.assertion_main_page() == "http://test.spacemir.com/"
-    spacemirfixture.space.click_button_cancel_geo()
+    spacemirfixture.space.click_submit_geo()
     # Проверяем наличие кнопки "Войти" в шапке
     assert spacemirfixture.space.assertion_button_log_in()
     # Проверяем наличие кнопки "Регистрация" в шапке
@@ -24,24 +24,22 @@ def test_assert_check_country_and_city(spacemirfixture):
     assert spacemirfixture.space.assertion_main_page() == "http://test.spacemir.com/"
     spacemirfixture.space.void_name_countries('Россия')
     spacemirfixture.space.click_name_countries()
-    spacemirfixture.space.void_name_city('Мос')
+    spacemirfixture.space.void_name_city('Москва')
     spacemirfixture.space.click_name_city()
     spacemirfixture.space.click_submit_geo()
-    time.sleep(2)
+    spacemirfixture.
     print('TestPassed')
 
 
 def test_auth_profile(spacemirfixture):
     spacemirfixture.open_sign_page()
     assert spacemirfixture.space.assertion_page_auth() == "http://test.spacemir.com/account/signin"
-    time.sleep(1)
-    spacemirfixture.space.click_button_cancel_geo()
+    spacemirfixture.space.click_submit_geo()
     spacemirfixture.auth.enter_email_field('1@1.ru')
     spacemirfixture.auth.enter_password("string")
     spacemirfixture.auth.click_login()
     spacemirfixture.profile.click_button_profile()
     spacemirfixture.profile.click_button_log_out()
-    time.sleep(1)
     assert spacemirfixture.space.assertion_page_auth() == "http://test.spacemir.com/account/signin"
     print('TestPassed')
 

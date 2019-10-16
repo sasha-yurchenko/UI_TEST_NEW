@@ -1,4 +1,4 @@
-class Locators():
+class Locators:
     # Login page objects
     email_field_xpath = "/html/body/sm-root/sm-base-layout/div/sm-account/div/div/div[2]/sm-signin/form/div[1]/input"
     password_field_xpath = "/html/body/sm-root/sm-base-layout/div/sm-account/div/div/div[2]/sm-signin/form/div[2]/input"
@@ -18,7 +18,7 @@ class Locators():
     button_cancel_xpath = '/html/body/div[2]/div/div/sm-geo-for-search-modal/div[3]/button[2]'
     field_name_countries_xpath = '//div/sm-geo-for-search-modal/div[2]/div[1]/div[1]/input'
     button_check_counties_xpath = '//div/sm-geo-for-search-modal/div[2]/div[1]/div[2]/ul/li'
-    button_check_city_xpath = '//div/sm-geo-for-search-modal/div[2]/div[2]/div[2]/ul/li[2]'
+    button_check_city_xpath = '//div/sm-geo-for-search-modal/div[2]/div[2]/div[2]/ul/li'
     field_name_city_xpath = '//div/sm-geo-for-search-modal/div[2]/div[2]/div[1]/input'
     search_wrap_geo_xpath = '/html/body/sm-root/sm-base-layout/sm-header/div/div/sm-global-geo/div/div/div/div/input'
     open_main_page_url = 'http://test.spacemir.com'

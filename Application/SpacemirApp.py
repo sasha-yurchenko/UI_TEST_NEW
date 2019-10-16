@@ -1,6 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
 
 from Pages.SpaceMainPage import SpaceMainHelper
 from Pages.LoginPage import LoginPage
@@ -9,6 +10,8 @@ from Pages.ProductsPage import ProductsPage
 
 
 # инициализируем наш веб-драйвер и делаем из классов объекты страниц.
+
+
 class App:
 
     def __init__(self):
@@ -20,18 +23,20 @@ class App:
         self.product = ProductsPage(self)
         self.driver.implicitly_wait(5)
 
+    # Методы ожидания
     def element_expected_conditions(self, method, locator):
-        return WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((method, locator)))
+        WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((method, locator)))
 
     def visibility_element_expected_conditions(self, element):
         return WebDriverWait(self.driver, 5).until(EC.visibility_of(element))
 
     def element_to_be_clickable(self, locator):
-        return WebDriverWait(self.driver, 5).until(EC.element_to_be_clickable(locator))
+        WebDriverWait(self.driver, 5).until(EC.element_to_be_clickable((By.XPATH, locator)))
 
-    def text_to_be_present_in_element(self):
+    def text_to_be_present_in_element(self, locator, text_):
+        return WebDriverWait(self.driver, 5).until(EC.text_to_be_present_in_element(locator, text_))
 
-    # Метод open_auth_page открывает главную страницу сайта
+    # Метод open_main_page открывает главную страницу сайта
     def open_main_page(self):
         driver = self.driver
         driver.get('http://test.spacemir.com')
