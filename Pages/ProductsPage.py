@@ -1,4 +1,8 @@
+from selenium.common.exceptions import ElementClickInterceptedException, NoSuchElementException, TimeoutException
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import Select
+from selenium.webdriver.common.action_chains import ActionChains
 
 from Locators.locators import Locators
 
@@ -15,6 +19,11 @@ class ProductsPage:
         self.open_drop_down_button = Locators.open_drop_down_button
         self.label_ads_short_card = Locators.label_ads_short_card
         self.field_search_elements = Locators.field_search_elements
+        self.tab_sale_xpath = Locators.tab_sale
+        self.value_filter_label_xpath = Locators.sm_multiselect_dropdown_menu
+        self.value_dropdown = Locators.value_drop_down
+        self.click_on_page = Locators.click_on_page
+        self.button_number = Locators.button_number
 
     def choice_category(self):
         self.driver.find_element_by_xpath(Locators.choice_category_in_catalog).click()
@@ -22,12 +31,62 @@ class ProductsPage:
     def choice_child_category(self):
         self.driver.find_element_by_xpath(Locators.choice_child_category_in_catalog).click()
 
-    def choice_filter(self):
+    def choice_filter_marks(self):
         self.driver.find_element_by_xpath(Locators.choice_filter).click()
 
-    def open_drop_down(self):
-        self.driver.find_element_by_xpath(Locators.open_drop_down_button).click()
+    def wait_for_clickable(self):
+        return self.app.element_expected_conditions(By.XPATH, Locators.choice_filter)
 
-    def void_search_element(self, name_element):
-        self.driver.find_element_by_xpath(self.field_search_elements).clean()
-        self.driver.find_element_by_xpath(Locators.field_search_elements).send_keys(name_element, Keys.ARROW_DOWN)
+    def tab_for_sale(self):
+        element = self.driver.find_element_by_xpath(Locators.tab_sale)
+        if self.app.visibility_element_expected_conditions(element):
+            return True
+        else:
+            return False and self.app.destroy()
+
+    def button_number_wait(self):
+        element = self.driver.find_element_by_xpath(Locators.button_number)
+        if self.app.visibility_element_expected_conditions(element):
+            return True
+        else:
+            return False and self.app.destroy()
+
+    def check_value_on_title(self):
+        try:
+            self.app.text_to_be_present_in_element_value((By.XPATH, Locators.label_ads_short_card), 'Nissan')
+            return True
+        except NoSuchElementException:
+            return False and self.app.destroy()
+
+    def click_search_element(self):
+        try:
+            self.driver.find_element_by_xpath(Locators.field_search_elements).click()
+            return True
+        except NoSuchElementException as e:
+            return False
+
+    def open_list_with_references(self):
+        try:
+            self.driver.find_element_by_xpath(Locators.open_drop_down_button).click()
+        except ElementClickInterceptedException:
+            self.app.element_to_be_clickable(Locators.open_drop_down_button)
+
+    def void_search_marks(self, marks_auto):
+        try:
+            self.driver.find_element_by_xpath(Locators.field_search_elements).send_keys(marks_auto)
+            return True
+        except NoSuchElementException as e:
+            return False
+
+    def wait_drop_down(self):
+        try:
+            self.app.element_expected_conditions(By.XPATH, Locators.sm_multiselect_dropdown_menu)
+            return True
+        except TimeoutException:
+            return False
+
+    def check_value(self):
+        self.driver.find_element_by_xpath(Locators.value_drop_down).click()
+
+    def close_filter_drop_down(self):
+        self.driver.find_element_by_xpath(Locators.click_on_page).click()

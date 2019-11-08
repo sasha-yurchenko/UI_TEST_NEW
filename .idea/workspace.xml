@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eeab4f8e-5d18-460d-98eb-d7bd5bce35b3" name="Default Changelist" comment="">
+    <list default="true" id="eeab4f8e-5d18-460d-98eb-d7bd5bce35b3" name="Default Changelist" comment="Test A001">
+      <change afterPath="$PROJECT_DIR$/Pages/SmConfirmGeoModal.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/a_urchenko.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/a_urchenko.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/SpacemirApp.py" beforeDir="false" afterPath="$PROJECT_DIR$/Application/SpacemirApp.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Locators/locators.py" beforeDir="false" afterPath="$PROJECT_DIR$/Locators/locators.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pages/MainHeader.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/MainHeader.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages/ProductsPage.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/ProductsPage.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pages/SpaceMainPage.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/SpaceMainPage.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tests/A001.py" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/A001.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/pip-selfcheck.json" beforeDir="false" afterPath="$PROJECT_DIR$/venv/pip-selfcheck.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,7 +25,7 @@
     <SUITE FILE_PATH="coverage/AutomationTestsSpacemir$A001.coverage" NAME="A001 Coverage Results" MODIFIED="1570456204523" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/untitled5$pytest_in_test_auth_py.coverage" NAME="pytest in test_auth.py Coverage Results" MODIFIED="1563449547438" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests" />
     <SUITE FILE_PATH="coverage/AutomationTestsSpacemir$SpacemirApp.coverage" NAME="SpacemirApp Coverage Results" MODIFIED="1571218769427" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Application" />
-    <SUITE FILE_PATH="coverage/AutomationTestsSpacemir$pytest_for_A001_test_assert_check_country_and_city.coverage" NAME="pytest for A001.test_assert_check_country_and_city Coverage Results" MODIFIED="1571227888071" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests" />
+    <SUITE FILE_PATH="coverage/AutomationTestsSpacemir$pytest_for_A001_test_assert_check_country_and_city.coverage" NAME="pytest for A001.test_assert_check_country_and_city Coverage Results" MODIFIED="1571924379650" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests" />
     <SUITE FILE_PATH="coverage/AutomationTestsSpacemir$pytest_for_A001_test_verification_check_listing_ads.coverage" NAME="pytest for A001.test_verification_check_listing_ads Coverage Results" MODIFIED="1570099302931" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests" />
     <SUITE FILE_PATH="coverage/untitled5$pytest_in_Tests.coverage" NAME="pytest in Tests Coverage Results" MODIFIED="1569232806723" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests" />
     <SUITE FILE_PATH="coverage/untitled5$pytest_for_A002_test_geo_main_page.coverage" NAME="pytest for A002.test_geo_main_page Coverage Results" MODIFIED="1569508552785" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests" />
@@ -29,13 +33,14 @@
     <SUITE FILE_PATH="coverage/AutomationTestsSpacemir$pytest_for_A001_test_geo_main_page1__1_.coverage" NAME="pytest for A001.test_geo_main_page1 (1) Coverage Results" MODIFIED="1569934482414" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests" />
     <SUITE FILE_PATH="coverage/untitled5$pytest_for_test_geo_test_geo_main_page.coverage" NAME="pytest for test_geo.test_geo_main_page Coverage Results" MODIFIED="1569231341709" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests" />
     <SUITE FILE_PATH="coverage/untitled5$pytest_in_A001_py.coverage" NAME="pytest in A001.py Coverage Results" MODIFIED="1569418860282" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests" />
-    <SUITE FILE_PATH="coverage/AutomationTestsSpacemir$pytest_for_A001_test_auth_profile.coverage" NAME="pytest for A001.test_auth_profile Coverage Results" MODIFIED="1571234388925" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests" />
+    <SUITE FILE_PATH="coverage/AutomationTestsSpacemir$pytest_for_A001_test_auth_profile.coverage" NAME="pytest for A001.test_auth_profile Coverage Results" MODIFIED="1571732718760" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests" />
     <SUITE FILE_PATH="coverage/AutomationTestsSpacemir$Unnamed.coverage" NAME="Test Coverage Results" MODIFIED="1570525281920" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/AutomationTestsSpacemir$A002.coverage" NAME="A002 Coverage Results" MODIFIED="1569842381386" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests" />
     <SUITE FILE_PATH="coverage/AutomationTestsSpacemir$pytest_for_A001_test_geo_main_page.coverage" NAME="pytest for A001.test_geo_main_page Coverage Results" MODIFIED="1569917632737" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests" />
     <SUITE FILE_PATH="coverage/untitled5$pytest_for_test_auth_test_auth_main_page.coverage" NAME="pytest for test_auth.test_auth_main_page Coverage Results" MODIFIED="1563446748734" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests" />
     <SUITE FILE_PATH="coverage/AutomationTestsSpacemir$.coverage" NAME="тестовый Coverage Results" MODIFIED="1571141988095" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests" />
-    <SUITE FILE_PATH="coverage/AutomationTestsSpacemir$pytest_for_A001_test_assert_started_site.coverage" NAME="pytest for A001.test_assert_started_site Coverage Results" MODIFIED="1571134467676" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests" />
+    <SUITE FILE_PATH="coverage/AutomationTestsSpacemir$pytest_for_A001_test_assert_ad_page.coverage" NAME="pytest for A001.test_assert_ad_page Coverage Results" MODIFIED="1571924618376" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests" />
+    <SUITE FILE_PATH="coverage/AutomationTestsSpacemir$pytest_for_A001_test_assert_started_site.coverage" NAME="pytest for A001.test_assert_started_site Coverage Results" MODIFIED="1573211443551" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests" />
     <SUITE FILE_PATH="coverage/AutomationTestsSpacemir$pytest_for_A002_test_geo_main_page.coverage" NAME="pytest for A002.test_geo_main_page Coverage Results" MODIFIED="1569852380259" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests" />
     <SUITE FILE_PATH="coverage/untitled5$AuthMain.coverage" NAME="AuthMain Coverage Results" MODIFIED="1558519124423" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Pages" />
     <SUITE FILE_PATH="coverage/AutomationTestsSpacemir$pytest_for_A001_test_check_page_ads.coverage" NAME="pytest for A001.test_check_page_ads Coverage Results" MODIFIED="1570711520355" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests" />
@@ -65,34 +70,53 @@
       <content type="file-editors">
         <state>
           <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-            <file pinned="false" current-in-tab="true">
+            <file pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/Pages/SpaceMainPage.py">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="-44">
-                    <caret selection-end-column="38" />
+                  <state relative-caret-position="102">
+                    <caret line="6" column="39" lean-forward="true" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
                     <folding>
-                      <element signature="e#0#38#0" expanded="true" />
-                      <marker date="1571229817085" expanded="true" signature="147:219" ph="..." />
-                      <marker date="1571229817085" expanded="true" signature="1435:1440" ph="..." />
-                      <marker date="1571229817085" expanded="true" signature="1662:1855" ph="..." />
+                      <element signature="e#0#71#0" expanded="true" />
+                      <marker date="1573221931720" expanded="true" signature="222:294" ph="..." />
+                      <marker date="1573221931720" expanded="true" signature="1377:1382" ph="..." />
                     </folding>
                   </state>
                 </provider>
               </entry>
             </file>
             <file pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/Pages/ProductsPage.py">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="816">
+                    <caret line="54" column="12" lean-forward="true" selection-start-line="54" selection-start-column="12" selection-end-line="54" selection-end-column="12" />
+                    <folding>
+                      <element signature="e#0#113#0" expanded="true" />
+                      <marker date="1571833432532" expanded="true" signature="381:382" ph="..." />
+                      <marker date="1571833432532" expanded="true" signature="381:387" ph="..." />
+                      <marker date="1571833432532" expanded="true" signature="1466:1546" ph="..." />
+                      <marker date="1571833432532" expanded="true" signature="1690:2454" ph="..." />
+                      <marker date="1571833432532" expanded="true" signature="1951:2454" ph="..." />
+                      <marker date="1571833432532" expanded="true" signature="2454:2459" ph="..." />
+                      <marker date="1571833432532" expanded="true" signature="2682:2688" ph="..." />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/Application/SpacemirApp.py">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="263">
-                    <caret line="33" column="92" lean-forward="true" selection-start-line="33" selection-start-column="92" selection-end-line="33" selection-end-column="92" />
+                  <state relative-caret-position="357">
+                    <caret line="27" column="21" lean-forward="true" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
                     <folding>
                       <element signature="e#0#30#0" expanded="true" />
-                      <marker date="1571222194692" expanded="true" signature="456:461" ph="..." />
-                      <marker date="1571222194692" expanded="true" signature="909:1458" ph="..." />
-                      <marker date="1571222194692" expanded="true" signature="1351:1458" ph="..." />
-                      <marker date="1571222194692" expanded="true" signature="1650:1742" ph="..." />
-                      <marker date="1571222194692" expanded="true" signature="1743:1747" ph="..." />
-                      <marker date="1571222194692" expanded="true" signature="1743:1821" ph="..." />
+                      <marker date="1573221931727" expanded="true" signature="492:497" ph="..." />
+                      <marker date="1573221931727" expanded="true" signature="1071:2421" ph="..." />
+                      <marker date="1573221931727" expanded="true" signature="1747:2421" ph="..." />
+                      <marker date="1573221931727" expanded="true" signature="2416:2421" ph="..." />
+                      <marker date="1573221931727" expanded="true" signature="2613:2859" ph="..." />
+                      <marker date="1573221931727" expanded="true" signature="2860:2864" ph="..." />
+                      <marker date="1573221931727" expanded="true" signature="2860:2938" ph="..." />
                     </folding>
                   </state>
                 </provider>
@@ -101,11 +125,11 @@
             <file pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/Locators/locators.py">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="459">
-                    <caret line="36" column="4" lean-forward="true" selection-start-line="36" selection-start-column="4" selection-end-line="36" selection-end-column="22" />
+                  <state relative-caret-position="605">
+                    <caret line="56" column="117" lean-forward="true" selection-start-line="56" selection-start-column="117" selection-end-line="56" selection-end-column="117" />
                     <folding>
-                      <marker date="1571214379881" expanded="true" signature="15:16" ph="..." />
-                      <marker date="1571214379881" expanded="true" signature="15:20" ph="..." />
+                      <marker date="1571927212406" expanded="true" signature="15:16" ph="..." />
+                      <marker date="1571927212406" expanded="true" signature="15:20" ph="..." />
                     </folding>
                   </state>
                 </provider>
@@ -174,34 +198,36 @@
         <counts>
           <entry key="project.closed" value="2" />
           <entry key="project.open.time.26" value="1" />
-          <entry key="project.open.time.28" value="1" />
-          <entry key="project.open.time.33" value="1" />
+          <entry key="project.open.time.28" value="2" />
+          <entry key="project.open.time.33" value="3" />
           <entry key="project.open.time.7" value="2" />
-          <entry key="project.opened" value="5" />
+          <entry key="project.opened" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="61" />
-          <entry key="testcommit" value="1" />
+          <entry key="py" value="81" />
+          <entry key="testcommit" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Python" value="61" />
+          <entry key="PLAIN_TEXT" value="2" />
+          <entry key="Python" value="81" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="6993" />
+          <entry key="Python Console" value="8" />
+          <entry key="py" value="12495" />
+          <entry key="testcommit" value="7" />
           <entry key="txt" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="9" />
-          <entry key="Python" value="6993" />
+          <entry key="PLAIN_TEXT" value="16" />
+          <entry key="Python" value="12503" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages">
@@ -213,47 +239,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Tests/A001.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="466">
-              <caret line="29" column="20" lean-forward="true" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
+            <state relative-caret-position="408">
+              <caret line="27" column="41" lean-forward="true" selection-start-line="27" selection-start-column="41" selection-end-line="27" selection-end-column="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Pages/SmConfirmGeoModal.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="21" column="84" lean-forward="true" selection-start-line="21" selection-start-column="84" selection-end-line="21" selection-end-column="84" />
               <folding>
-                <marker date="1571236547158" expanded="true" signature="715:716" ph="..." />
-                <marker date="1571236547158" expanded="true" signature="1334:1335" ph="..." />
-                <marker date="1571236547158" expanded="true" signature="1334:1337" ph="..." />
-                <marker date="1571236547158" expanded="true" signature="1334:1339" ph="..." />
+                <element signature="e#0#113#0" expanded="true" />
+                <marker date="1573222644385" expanded="true" signature="214:215" ph="..." />
+                <marker date="1573222644385" expanded="true" signature="214:216" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/_pytest/python.py">
+        <entry file="file://$PROJECT_DIR$/Pages/LoginPage.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="1422" selection-start-line="1422" selection-end-line="1422" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/selenium/webdriver/support/expected_conditions.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
-              <caret line="458" column="7" selection-start-line="458" selection-start-column="7" selection-end-line="459" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Pages/MainHeader.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" selection-start-line="21" selection-end-line="21" />
+            <state>
+              <caret selection-end-column="38" />
               <folding>
-                <marker date="1571234388895" expanded="true" signature="54:55" ph="..." />
-                <marker date="1571234388895" expanded="true" signature="54:60" ph="..." />
+                <marker date="1570199439726" expanded="true" signature="59:65" ph="..." />
+                <marker date="1570199439726" expanded="true" signature="59:554" ph="..." />
               </folding>
             </state>
           </provider>
@@ -271,6 +287,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>test_geo_main_pag</find>
+      <find>button_can</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -294,18 +311,22 @@
         <option value="$PROJECT_DIR$/Tests/Тестовый.py" />
         <option value="$PROJECT_DIR$/conftest.py" />
         <option value="$PROJECT_DIR$/Pages/LoginPage.py" />
-        <option value="$PROJECT_DIR$/Pages/ProductsPage.py" />
         <option value="$PROJECT_DIR$/Pages/ProfilePage.py" />
-        <option value="$PROJECT_DIR$/venv/Lib/site-packages/selenium/webdriver/support/expected_conditions.py" />
         <option value="$PROJECT_DIR$/Tests/тестовый.py" />
+        <option value="$PROJECT_DIR$/testcommit" />
+        <option value="$PROJECT_DIR$/venv/Lib/site-packages/selenium/webdriver/support/expected_conditions.py" />
+        <option value="$PROJECT_DIR$/venv/Lib/site-packages/selenium/webdriver/chrome/webdriver.py" />
+        <option value="$PROJECT_DIR$/Pages/ProductsPage.py" />
+        <option value="$PROJECT_DIR$/Pages/MainHeader.py" />
+        <option value="$PROJECT_DIR$/Pages/FormGeoSubmit.py" />
         <option value="$PROJECT_DIR$/Locators/locators.py" />
         <option value="$PROJECT_DIR$/Application/SpacemirApp.py" />
         <option value="$PROJECT_DIR$/Application/SpacemirApp.py" />
         <option value="$PROJECT_DIR$/Pages/SpaceMainPage.py" />
         <option value="$PROJECT_DIR$/Pages/SpaceMainPage.py" />
-        <option value="$PROJECT_DIR$/Pages/MainHeader.py" />
         <option value="$PROJECT_DIR$/Tests/A001.py" />
         <option value="$PROJECT_DIR$/Tests/A001.py" />
+        <option value="$PROJECT_DIR$/Pages/SmConfirmGeoModal.py" />
       </list>
     </option>
   </component>
@@ -316,10 +337,27 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="100" />
-    <option name="y" value="78" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State />
+          <State>
+            <id>Python</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>PyArgumentListInspection</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -327,7 +365,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -363,12 +400,13 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="ex&#9;FILE&#9;file://C:/Users/a.urchenko/PycharmProjects/AuomationTestsSpacemir/venv/Lib/site-packages/selenium/webdriver/support/expected_conditions.py&#10;exp&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Tests/A001.py" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Documents/sm-front-v2" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
@@ -385,7 +423,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.pytest for A001.test_auth_profile">
+  <component name="RunManager" selected="Python tests.pytest for A001.test_assert_started_site">
     <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
       <module name="AutomationTestsSpacemir" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -430,28 +468,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="ADDITIONAL_ARGS" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="тестовый" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="AuomationTestsSpacemir" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Tests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Tests/тестовый.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
     <configuration name="SpacemirApp" type="PythonConfigurationType" factoryName="Python" temporary="true">
@@ -605,6 +621,22 @@
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
+    <configuration name="pytest for A001.test_assert_ad_page" type="tests" factoryName="py.test" editBeforeRun="true" activateToolWindowBeforeRun="false" temporary="true" nameIsGenerated="true">
+      <module name="AuomationTestsSpacemir" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="C:\Users\a.urchenko\PycharmProjects\AuomationTestsSpacemir\venv\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;A001.test_assert_ad_page&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
     <configuration name="pytest for A001.test_assert_check_country_and_city" type="tests" factoryName="py.test" editBeforeRun="true" activateToolWindowBeforeRun="false" temporary="true" nameIsGenerated="true">
       <module name="AuomationTestsSpacemir" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -657,16 +689,16 @@
       <item itemvalue="Python tests.pytest for A001.test_assert_started_site" />
       <item itemvalue="Python tests.pytest for A001.test_assert_check_country_and_city" />
       <item itemvalue="Python tests.pytest for A001.test_auth_profile" />
-      <item itemvalue="Python.тестовый" />
       <item itemvalue="Python.SpacemirApp" />
+      <item itemvalue="Python tests.pytest for A001.test_assert_ad_page" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.pytest for A001.test_auth_profile" />
-        <item itemvalue="Python tests.pytest for A001.test_assert_check_country_and_city" />
-        <item itemvalue="Python.SpacemirApp" />
-        <item itemvalue="Python.тестовый" />
         <item itemvalue="Python tests.pytest for A001.test_assert_started_site" />
+        <item itemvalue="Python tests.pytest for A001.test_assert_ad_page" />
+        <item itemvalue="Python tests.pytest for A001.test_assert_check_country_and_city" />
+        <item itemvalue="Python tests.pytest for A001.test_auth_profile" />
+        <item itemvalue="Python.SpacemirApp" />
       </list>
     </recent_temporary>
   </component>
@@ -692,35 +724,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="pytest_for_A001_test_assert_check_country_and_city - 2019.10.16 at 15h 05m 04s.xml">
+    <history-entry file="pytest_for_A001_test_assert_started_site - 2019.10.23 at 16h 40m 04s.xml">
+      <configuration name="pytest for A001.test_assert_started_site" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_for_A001_test_assert_check_country_and_city - 2019.10.24 at 16h 38m 03s.xml">
       <configuration name="pytest for A001.test_assert_check_country_and_city" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_for_A001_test_assert_check_country_and_city - 2019.10.16 at 15h 05m 48s.xml">
+    <history-entry file="pytest_for_A001_test_assert_check_country_and_city - 2019.10.24 at 16h 38m 32s.xml">
       <configuration name="pytest for A001.test_assert_check_country_and_city" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_for_A001_test_assert_check_country_and_city - 2019.10.16 at 15h 06m 27s.xml">
+    <history-entry file="pytest_for_A001_test_assert_check_country_and_city - 2019.10.24 at 16h 39m 57s.xml">
       <configuration name="pytest for A001.test_assert_check_country_and_city" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_for_A001_test_assert_check_country_and_city - 2019.10.16 at 15h 06m 53s.xml">
-      <configuration name="pytest for A001.test_assert_check_country_and_city" configurationId="tests" />
+    <history-entry file="pytest_for_A001_test_assert_ad_page - 2019.10.24 at 16h 41m 07s.xml">
+      <configuration name="pytest for A001.test_assert_ad_page" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_for_A001_test_assert_check_country_and_city - 2019.10.16 at 15h 07m 28s.xml">
-      <configuration name="pytest for A001.test_assert_check_country_and_city" configurationId="tests" />
+    <history-entry file="pytest_for_A001_test_assert_ad_page - 2019.10.24 at 16h 42m 33s.xml">
+      <configuration name="pytest for A001.test_assert_ad_page" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_for_A001_test_assert_check_country_and_city - 2019.10.16 at 15h 08m 44s.xml">
-      <configuration name="pytest for A001.test_assert_check_country_and_city" configurationId="tests" />
+    <history-entry file="pytest_for_A001_test_assert_ad_page - 2019.10.24 at 16h 43m 56s.xml">
+      <configuration name="pytest for A001.test_assert_ad_page" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_for_A001_test_assert_check_country_and_city - 2019.10.16 at 15h 09m 47s.xml">
-      <configuration name="pytest for A001.test_assert_check_country_and_city" configurationId="tests" />
+    <history-entry file="pytest_for_A001_test_assert_started_site - 2019.11.08 at 13h 48m 07s.xml">
+      <configuration name="pytest for A001.test_assert_started_site" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_for_A001_test_assert_check_country_and_city - 2019.10.16 at 15h 11m 06s.xml">
-      <configuration name="pytest for A001.test_assert_check_country_and_city" configurationId="tests" />
+    <history-entry file="pytest_for_A001_test_assert_started_site - 2019.11.08 at 13h 48m 44s.xml">
+      <configuration name="pytest for A001.test_assert_started_site" configurationId="tests" />
     </history-entry>
-    <history-entry file="pytest_for_A001_test_assert_check_country_and_city - 2019.10.16 at 15h 11m 37s.xml">
-      <configuration name="pytest for A001.test_assert_check_country_and_city" configurationId="tests" />
-    </history-entry>
-    <history-entry file="pytest_for_A001_test_auth_profile - 2019.10.16 at 16h 59m 50s.xml">
-      <configuration name="pytest for A001.test_auth_profile" configurationId="tests" />
+    <history-entry file="pytest_for_A001_test_assert_started_site - 2019.11.08 at 14h 10m 51s.xml">
+      <configuration name="pytest for A001.test_assert_started_site" configurationId="tests" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -734,13 +766,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.88" visible="true" weight="0.20522387" />
-      <window_info id="Structure" order="1" sideWeight="0.12" side_tool="true" visible="true" weight="0.20522387" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4556355" visible="true" weight="0.21162046" />
+      <window_info id="Structure" order="1" sideWeight="0.5443645" side_tool="true" weight="0.21162046" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.329718" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.29067245" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.35249457" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.44251627" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -749,7 +782,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.29501083" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.22234273" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.329718" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -836,19 +869,6 @@
     <entry file="file://$PROJECT_DIR$/Pages/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/conftest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testcommit">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/selenium/common/exceptions.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="410">
@@ -870,36 +890,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Pages/LoginPage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
-          <folding>
-            <marker date="1570199439726" expanded="true" signature="59:65" ph="..." />
-            <marker date="1570199439726" expanded="true" signature="59:554" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pages/ProductsPage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
-          <folding>
-            <element signature="e#0#47#0" expanded="true" />
-            <marker date="1570704041909" expanded="true" signature="109:110" ph="..." />
-            <marker date="1570704041909" expanded="true" signature="109:115" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Tests/тестовый.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" selection-start-line="17" selection-end-line="17" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -959,80 +953,161 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/testcommit">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="4" lean-forward="true" selection-start-column="4" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/_pytest/python.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
+        <state relative-caret-position="521">
           <caret line="1422" selection-start-line="1422" selection-end-line="1422" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/selenium/webdriver/remote/webelement.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="157" column="8" selection-start-line="157" selection-start-column="8" selection-end-line="157" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/selenium/webdriver/remote/webdriver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="559">
+          <caret line="843" column="8" selection-start-line="843" selection-start-column="8" selection-end-line="843" selection-end-column="35" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/selenium/webdriver/support/expected_conditions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="458" column="7" selection-start-line="458" selection-start-column="7" selection-end-line="459" selection-end-column="14" />
+        <state relative-caret-position="161">
+          <caret line="54" column="8" selection-start-line="54" selection-start-column="8" selection-end-line="57" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/selenium/webdriver/chrome/webdriver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="653">
+          <caret line="65" selection-start-line="65" selection-end-line="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pages/FormGeoSubmit.py" />
+    <entry file="file://$PROJECT_DIR$/conftest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pages/LoginPage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-column="38" />
+          <folding>
+            <marker date="1570199439726" expanded="true" signature="59:65" ph="..." />
+            <marker date="1570199439726" expanded="true" signature="59:554" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pages/ProductsPage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="816">
+          <caret line="54" column="12" lean-forward="true" selection-start-line="54" selection-start-column="12" selection-end-line="54" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#113#0" expanded="true" />
+            <marker date="1571833432532" expanded="true" signature="381:382" ph="..." />
+            <marker date="1571833432532" expanded="true" signature="381:387" ph="..." />
+            <marker date="1571833432532" expanded="true" signature="1466:1546" ph="..." />
+            <marker date="1571833432532" expanded="true" signature="1690:2454" ph="..." />
+            <marker date="1571833432532" expanded="true" signature="1951:2454" ph="..." />
+            <marker date="1571833432532" expanded="true" signature="2454:2459" ph="..." />
+            <marker date="1571833432532" expanded="true" signature="2682:2688" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Locators/locators.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="36" column="4" lean-forward="true" selection-start-line="36" selection-start-column="4" selection-end-line="36" selection-end-column="22" />
+        <state relative-caret-position="605">
+          <caret line="56" column="117" lean-forward="true" selection-start-line="56" selection-start-column="117" selection-end-line="56" selection-end-column="117" />
           <folding>
-            <marker date="1571214379881" expanded="true" signature="15:16" ph="..." />
-            <marker date="1571214379881" expanded="true" signature="15:20" ph="..." />
+            <marker date="1571927212406" expanded="true" signature="15:16" ph="..." />
+            <marker date="1571927212406" expanded="true" signature="15:20" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Pages/MainHeader.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        <state relative-caret-position="408">
+          <caret line="24" column="72" lean-forward="true" selection-start-line="24" selection-start-column="72" selection-end-line="24" selection-end-column="72" />
           <folding>
-            <marker date="1571234388895" expanded="true" signature="54:55" ph="..." />
-            <marker date="1571234388895" expanded="true" signature="54:60" ph="..." />
+            <element signature="e#0#38#0" expanded="true" />
+            <marker date="1571834627272" expanded="true" signature="160:161" ph="..." />
+            <marker date="1571834627272" expanded="true" signature="160:166" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/SpacemirApp.py">
+    <entry file="file://$USER_HOME$/.PyCharm2018.2/system/python_stubs/-187594695/builtins.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="33" column="92" lean-forward="true" selection-start-line="33" selection-start-column="92" selection-end-line="33" selection-end-column="92" />
-          <folding>
-            <element signature="e#0#30#0" expanded="true" />
-            <marker date="1571222194692" expanded="true" signature="456:461" ph="..." />
-            <marker date="1571222194692" expanded="true" signature="909:1458" ph="..." />
-            <marker date="1571222194692" expanded="true" signature="1351:1458" ph="..." />
-            <marker date="1571222194692" expanded="true" signature="1650:1742" ph="..." />
-            <marker date="1571222194692" expanded="true" signature="1743:1747" ph="..." />
-            <marker date="1571222194692" expanded="true" signature="1743:1821" ph="..." />
-          </folding>
+        <state relative-caret-position="330">
+          <caret line="685" column="28" lean-forward="true" selection-start-line="685" selection-start-column="28" selection-end-line="685" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Pages/SpaceMainPage.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-44">
-          <caret selection-end-column="38" />
+        <state relative-caret-position="102">
+          <caret line="6" column="39" lean-forward="true" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
           <folding>
-            <element signature="e#0#38#0" expanded="true" />
-            <marker date="1571229817085" expanded="true" signature="147:219" ph="..." />
-            <marker date="1571229817085" expanded="true" signature="1435:1440" ph="..." />
-            <marker date="1571229817085" expanded="true" signature="1662:1855" ph="..." />
+            <element signature="e#0#71#0" expanded="true" />
+            <marker date="1573221931720" expanded="true" signature="222:294" ph="..." />
+            <marker date="1573221931720" expanded="true" signature="1377:1382" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Tests/A001.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="466">
-          <caret line="29" column="20" lean-forward="true" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
+        <state relative-caret-position="408">
+          <caret line="27" column="41" lean-forward="true" selection-start-line="27" selection-start-column="41" selection-end-line="27" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/SpacemirApp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="27" column="21" lean-forward="true" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
           <folding>
-            <marker date="1571236547158" expanded="true" signature="715:716" ph="..." />
-            <marker date="1571236547158" expanded="true" signature="1334:1335" ph="..." />
-            <marker date="1571236547158" expanded="true" signature="1334:1337" ph="..." />
-            <marker date="1571236547158" expanded="true" signature="1334:1339" ph="..." />
+            <element signature="e#0#30#0" expanded="true" />
+            <marker date="1573221931727" expanded="true" signature="492:497" ph="..." />
+            <marker date="1573221931727" expanded="true" signature="1071:2421" ph="..." />
+            <marker date="1573221931727" expanded="true" signature="1747:2421" ph="..." />
+            <marker date="1573221931727" expanded="true" signature="2416:2421" ph="..." />
+            <marker date="1573221931727" expanded="true" signature="2613:2859" ph="..." />
+            <marker date="1573221931727" expanded="true" signature="2860:2864" ph="..." />
+            <marker date="1573221931727" expanded="true" signature="2860:2938" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pages/SmConfirmGeoModal.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="84" lean-forward="true" selection-start-line="21" selection-start-column="84" selection-end-line="21" selection-end-column="84" />
+          <folding>
+            <element signature="e#0#113#0" expanded="true" />
+            <marker date="1573222644385" expanded="true" signature="214:215" ph="..." />
+            <marker date="1573222644385" expanded="true" signature="214:216" ph="..." />
           </folding>
         </state>
       </provider>

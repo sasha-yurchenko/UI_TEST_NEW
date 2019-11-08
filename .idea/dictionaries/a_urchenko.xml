@@ -2,6 +2,8 @@
   <dictionary name="a.urchenko">
     <words>
       <w>clickable</w>
+      <w>dropdown</w>
+      <w>multiselect</w>
       <w>pytest</w>
       <w>spacemirfixture</w>
     </words>
