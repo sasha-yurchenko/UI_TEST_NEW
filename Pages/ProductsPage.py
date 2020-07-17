@@ -19,11 +19,14 @@ class ProductsPage:
         self.open_drop_down_button = Locators.open_drop_down_button
         self.label_ads_short_card = Locators.label_ads_short_card
         self.field_search_elements = Locators.field_search_elements
-        self.tab_sale_xpath = Locators.tab_sale
         self.value_filter_label_xpath = Locators.sm_multiselect_dropdown_menu
         self.value_dropdown = Locators.value_drop_down
         self.click_on_page = Locators.click_on_page
         self.button_number = Locators.button_number
+        self.button_chat = Locators.button_chat
+        self.button_favorite_on_product_page = Locators.button_favorite_on_product_page
+        self.main_price = Locators.main_price
+        self.name_user = Locators.name_seller
 
     def choice_category(self):
         self.driver.find_element_by_xpath(Locators.choice_category_in_catalog).click()
@@ -37,9 +40,9 @@ class ProductsPage:
     def wait_for_clickable(self):
         return self.app.element_expected_conditions(By.XPATH, Locators.choice_filter)
 
-    def tab_for_sale(self):
-        element = self.driver.find_element_by_xpath(Locators.tab_sale)
-        if self.app.visibility_element_expected_conditions(element):
+    def tab_exist_product_page(self):
+        tab_1 = self.driver.find_element_by_xpath(Locators.tab_main)
+        if self.app.visibility_element_expected_conditions(tab_1):
             return True
         else:
             return False and self.app.destroy()
@@ -90,3 +93,14 @@ class ProductsPage:
 
     def close_filter_drop_down(self):
         self.driver.find_element_by_xpath(Locators.click_on_page).click()
+
+    def check_availability_elements_on_short_card(self):
+        try:
+            self.driver.find_element_by_xpath(Locators.button_chat)
+            self.driver.find_element_by_xpath(Locators.button_favorite_on_product_page)
+            self.driver.find_element_by_xpath(Locators.main_price)
+            self.driver.find_element_by_xpath(Locators.name_seller)
+            return True
+        except TimeoutError:
+            print('Ничего не найдено')
+            return False

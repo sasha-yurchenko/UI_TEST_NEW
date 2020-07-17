@@ -1,8 +1,4 @@
-from selenium.common.exceptions import ElementClickInterceptedException
-
 from Locators.locators import Locators
-from selenium.webdriver.common.by import By
-
 
 # класс для работы с главной страницей.
 
@@ -35,3 +31,16 @@ class SpaceMainHelper:
 
     def assertion_page_auth(self):
         return self.driver.current_url
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -54,19 +54,22 @@ class App:
     # Метод open_main_page открывает главную страницу сайта
     def open_main_page(self):
         driver = self.driver
-        driver.get('http://test.spacemir.com')
+        driver.get('https://t-front.spacemir.com/')
 
     def open_sign_page(self):
         driver = self.driver
-        driver.get('https://test.spacemir.com/account/signin')
+        driver.get('https://t-front.spacemir.com/account/signin')
 
     def open_ad_page(self):
         driver = self.driver
-        driver.get('https://test.spacemir.com/ads/5c24c083384fa011c82aa0a7?countryGeoCode=BR')
+        driver.get('https://t-front.spacemir.com/products/5c24c083384fa011c82aa0a7?countryGeoCode=BR')
 
     # Данный метод закрывает веб-браузер и завершает процесс вебдрайвера.
     def destroy(self):
         self.driver.quit()
+
+    def refresh(self):
+        self.driver.refresh()
 
     @staticmethod
     def browser_options(options):
