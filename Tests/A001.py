@@ -63,4 +63,5 @@ def test_assert_ad_page(spacemirfixture):
 
 def test_new_registration(spacemirfixture):
     spacemirfixture.auth.open_sigh_page()
+    s
 
