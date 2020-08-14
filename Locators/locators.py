@@ -1,4 +1,3 @@
-
 class Locators:
     # Login page objects
     email_field_xpath = "/html/body/sm-root/sm-base-layout/div/sm-account/div/div/div[2]/sm-signin/form/div[1]/input"
@@ -19,7 +18,6 @@ class Locators:
     start_block_profile = '/html/body/sm-root/sm-base-layout/div[2]/sm-profile/div[2]/div/div/sm-entry-profile-page/div'
     button_apartaments = '/html/body/sm-root/sm-base-layout/div[2]/sm-profile/div[1]/div/ul/li[1]/a'
     button_favorite = '/html/body/sm-root/sm-base-layout/div[2]/sm-profile/div[1]/div/ul/li[2]/a'
-
 
     # Main Headers objects
     button_login = '//button'
@@ -69,3 +67,9 @@ class Locators:
     search_wrap_geo_xpath = '/html/body/sm-root/sm-base-layout/div[2]/sm-entry-page/div/div[2]/div/div/sm-global-geo/div/div/div/div/span'
     geo_modal_first = '//*[@id="sm-overlay-host-2"]/div/sm-confirm-geo-modal/span'
     button_check_city_xpath = '/html/body/div[2]/div[2]/div/sm-geo-for-search-modal/div[2]/div[2]/div[2]/ul/li[1]'
+
+    # Main Page
+    add_product_button = '[class = "add-product-button"]'
+    elements_top_blocks = '.top-blocks:nth-child(1)>.title.m-b-12'
+    search_button = '.is-desktop:nth-child(1)>.search-button'
+    input_search = '.ng-untouched:nth-child(1).sm-input.search-wrap'

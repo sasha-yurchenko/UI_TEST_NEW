@@ -8,6 +8,7 @@ from Pages.ProfilePage import ProfilePage
 from Pages.ProductsPage import ProductsPage
 from Pages.MainHeader import Header
 from Pages.SmConfirmGeoModal import GeoModal
+from Pages.MainPage import MainPage
 
 # инициализируем наш веб-драйвер и делаем из классов объекты страниц.
 
@@ -23,6 +24,7 @@ class App:
         self.product = ProductsPage(self)
         self.head = Header(self)
         self.geo = GeoModal(self)
+        self.main_page = MainPage(self)
         self.driver.implicitly_wait(10)
 
     # Методы ожидания

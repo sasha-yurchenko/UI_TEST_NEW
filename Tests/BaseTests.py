@@ -38,7 +38,7 @@ def test_auth_profile(spacemirfixture):
     assert spacemirfixture.space.assertion_page_auth() == "https://t-front.spacemir.com/account/signin"
     spacemirfixture.geo.click_submit_geo_position()
     spacemirfixture.auth.enter_email_field('1@1.ru')
-    spacemirfixture.auth.enter_password("mir123space")
+    spacemirfixture.auth.enter_password("8auiv1")
     spacemirfixture.auth.click_login()
     assert spacemirfixture.profile.check_exists_profile_elements()
     spacemirfixture.profile.click_button_profile()
@@ -53,7 +53,7 @@ def test_assert_ad_page(spacemirfixture):
     spacemirfixture.geo.click_name_city()
     spacemirfixture.geo.click_submit_geo()
     spacemirfixture.auth.enter_email_field('1@1.ru')
-    spacemirfixture.auth.enter_password("mir123space")
+    spacemirfixture.auth.enter_password("8auiv1")
     spacemirfixture.auth.click_login()
     assert spacemirfixture.profile.check_exists_profile_elements()
     spacemirfixture.open_ad_page()
@@ -62,6 +62,5 @@ def test_assert_ad_page(spacemirfixture):
 
 
 def test_new_registration(spacemirfixture):
-    spacemirfixture.auth.open_sigh_page()
-    s
-
+    spacemirfixture.open_main_page()
+    spacemirfixture.main_page.check_elements_on_main_page()
