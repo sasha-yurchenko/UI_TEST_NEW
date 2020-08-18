@@ -73,3 +73,8 @@ class Locators:
     elements_top_blocks = '.top-blocks:nth-child(1)>.title.m-b-12'
     search_button = '.is-desktop:nth-child(1)>.search-button'
     input_search = '.ng-untouched:nth-child(1).sm-input.search-wrap'
+    bottom_buttons_1 = 'div.bottom-buttons>button:nth-child(1)'
+    bottom_buttons_2 = 'div.bottom-buttons>button:nth-child(2)'
+
+
+
