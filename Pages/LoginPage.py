@@ -9,21 +9,19 @@ class LoginPage:
         self.app = app
         self.driver = self.app.driver
 
-        self.email_field_xpath = Locators.email_field_xpath
-        self.password_field_xpath = Locators.password_field_xpath
+        self.email_field_css_selector = Locators.email_field_css_selector
+        self.password_field_css_selector = Locators.password_field_css_selector
         self.login_button_xpath = Locators.login_button_xpath
         self.text_fail_auth_xpath = Locators.text_fail_auth_xpath
 
     def enter_email_field(self, email_field):
-        self.driver.find_element_by_xpath(self.email_field_xpath).clear()
-        self.driver.find_element_by_xpath(Locators.email_field_xpath).send_keys(email_field)
+        self.driver.find_element(By.CSS_SELECTOR, Locators.email_field_css_selector).send_keys(email_field)
 
     def enter_password(self, password_field):
-        self.driver.find_element_by_xpath(self.password_field_xpath).clear()
-        self.driver.find_element_by_xpath(Locators.password_field_xpath).send_keys(password_field)
+        self.driver.find_element(By.CSS_SELECTOR, Locators.password_field_css_selector).send_keys(password_field)
 
     def click_login(self):
-        self.driver.find_element_by_xpath(Locators.login_button_xpath).click()
+        self.driver.find_element(By.CSS_SELECTOR, Locators.login_button_xpath).click()
 
     def check_text_fail_auth(self):
         try:

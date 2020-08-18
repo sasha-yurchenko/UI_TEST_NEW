@@ -1,5 +1,6 @@
 from Locators.locators import Locators
 from selenium.common.exceptions import NoSuchElementException
+from selenium.webdriver.common.by import By
 
 
 class ProfilePage:
@@ -23,10 +24,11 @@ class ProfilePage:
 
     def check_exists_profile_elements(self):
         try:
-            self.driver.find_element_by_xpath(Locators.start_block_profile)
-            self.driver.find_element_by_xpath(Locators.sidebar_profile)
-            self.driver.find_element_by_xpath(Locators.button_apartaments)
-            self.driver.find_element_by_xpath(Locators.button_favorite)
+            self.driver.find_element(By.CSS_SELECTOR, Locators.start_block_profile)
+            self.driver.find_element(By.CSS_SELECTOR, Locators.top_block_profile)
+            self.driver.find_element(By.CSS_SELECTOR, Locators.sidebar_profile)
+            self.driver.find_element(By.CSS_SELECTOR, Locators.button_apartaments)
+            self.driver.find_element(By.CSS_SELECTOR, Locators.button_favorite_in_sidebar)
             return True
         except NoSuchElementException:
             print('Zero element for U!')

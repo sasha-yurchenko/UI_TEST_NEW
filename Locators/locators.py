@@ -1,8 +1,8 @@
 class Locators:
     # Login page objects
-    email_field_xpath = "/html/body/sm-root/sm-base-layout/div/sm-account/div/div/div[2]/sm-signin/form/div[1]/input"
-    password_field_xpath = "/html/body/sm-root/sm-base-layout/div/sm-account/div/div/div[2]/sm-signin/form/div[2]/input"
-    login_button_xpath = '/html/body/sm-root/sm-base-layout/div/sm-account/div/div/div[''2]/sm-signin/form/button'
+    email_field_css_selector = "sm-signin div.sm-form-field:nth-child(1) input"
+    password_field_css_selector = "sm-signin div.sm-form-field:nth-child(2) input"
+    login_button_xpath = 'sm-signin form button'
     forgot_password = '/html/body/sm-root/sm-base-layout/div/sm-account/div/div/div[2]/sm-signin/form/div[3]/a'
     field_email_for_forgot_password = '/html/body/sm-root/sm-base-layout/div/sm-account/div/div/div[' \
                                       '2]/sm-restore/form/div/input '
@@ -11,17 +11,22 @@ class Locators:
     text_fail_auth_xpath = '/html/body/sm-root/sm-base-layout/div[2]/sm-account/div/div/div[2]/div'
 
     # Profile page objects
-    button_profile_menu_xpath = '/html/body/sm-root/sm-base-layout/sm-header/div/div/div[4]/sm-avatar/div/div/img'
-    button_log_out_xpath = '//div/sm-profile-dropdown-menu/div/div/div'
-    tittle_block_profile = '/html/body/sm-root/sm-base-layout/div[2]/sm-profile/div[2]/div/div/sm-entry-profile-page/div/div[1]/div[1]/div[1]/span'
-    sidebar_profile = '/html/body/sm-root/sm-base-layout/div[2]/sm-profile/div[1]'
-    start_block_profile = '/html/body/sm-root/sm-base-layout/div[2]/sm-profile/div[2]/div/div/sm-entry-profile-page/div'
-    button_apartaments = '/html/body/sm-root/sm-base-layout/div[2]/sm-profile/div[1]/div/ul/li[1]/a'
-    button_favorite = '/html/body/sm-root/sm-base-layout/div[2]/sm-profile/div[1]/div/ul/li[2]/a'
+    button_profile_menu_xpath = '.user-button img '
+    button_log_out_xpath = 'div.buttons :nth-child(5)'
+    sidebar_profile = '.site-content ul'
+    start_block_profile = "div.start-block"
+    top_block_profile = "div.top-block"
+    top_block_profile_text = ".top-block :nth-child(1) span"
+    top_block_profile_icon = ".top-block :nth-child(1) i"
+    button_top_block_profile = ".top-block :nth-child(3) a button"
+    security_link = "div.avatar-block a"
+    avatar_image = "div.avatar-block sm-avatar"
+    button_apartaments = '.site-content sm-profile li:nth-child(1)'
+    button_favorite_in_sidebar = '.site-content sm-profile li:nth-child(2)'
 
     # Main Headers objects
-    button_login = '//button'
-    button_registration = '/html/body/sm-root/sm-base-layout/sm-header/div/div/div[3]/a[2]/button'
+    button_login = 'div.auth-nav a:nth-child(1)'
+    button_registration = 'div.auth-nav a:nth-child(1)'
     change_language_interface = '/html/body/sm-root/sm-base-layout/sm-header/div/div/sm-locale-select/div'
     close_language_interface = '//*[@id="sm-overlay-host-1"]/div/sm-locale-select-modal/div[2]/i'
     interface_language_list = '//*[@id="sm-overlay-host-1"]/div/sm-locale-select-modal/sm-select/div/div/i[1]'

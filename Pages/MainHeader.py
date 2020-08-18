@@ -22,7 +22,7 @@ class Header:
         self.drop_down_list_geo = Locators.drop_down_list_geo
 
     def click_button_login_header(self):
-        self.driver.find_element_by_xpath(Locators.button_login).click()
+        self.driver.find_element_by_css_selector(Locators.button_login).click()
 
     def click_button_registration_header(self):
         self.driver.find_element_by_xpath(Locators.button_registration).click()

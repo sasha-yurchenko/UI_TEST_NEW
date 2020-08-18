@@ -65,4 +65,14 @@ def test_new_registration(spacemirfixture):
     spacemirfixture.open_main_page()
     spacemirfixture.geo.click_submit_geo_position()
     spacemirfixture.main_page.check_elements_on_main_page()
+    spacemirfixture.head.click_button_login_header()
+    spacemirfixture.auth.enter_email_field('1@1.ru')
+    spacemirfixture.auth.enter_password("123456")
+    spacemirfixture.auth.click_login()
+    assert spacemirfixture.profile.check_exists_profile_elements()
+    spacemirfixture.head.public_ad()
+
+
+
+
 
