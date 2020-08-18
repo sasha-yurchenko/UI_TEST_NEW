@@ -56,8 +56,8 @@ class Locators:
     name_seller = '/html/body/sm-root/sm-base-layout/div[2]/sm-product-findings/div/div/div/div/div/div[2]/sm-short-product-card[1]/div/div/div[1]'
 
     # Geo Modal object
-    button_submit_geo_position = '//div[4]/button'
-    button_choose_another_country = '//div[4]/button[2]'
+    button_submit_geo_position = '.actions :nth-child(1)'
+    button_choose_another_country = '.actions :nth-child(2)'
     confirm_geo_modal = '//*[@id="sm-overlay-host-2"]/div/sm-confirm-geo-modal'
     submit_geo_xpath = '//div/sm-geo-for-search-modal/div[3]/button[1]'
     button_cancel_geo_xpath = '/html/body/div[2]/div/div/sm-geo-for-search-modal/div[3]/button[2]'

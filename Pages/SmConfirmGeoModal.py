@@ -57,8 +57,8 @@ class GeoModal:
                 "/html/body/sm-root/sm-base-layout/sm-header/div/div/sm-global-geo/div/div/div/div/input")) > 0
 
     def click_submit_geo_position(self):
-        self.app.element_to_be_clickable((By.XPATH, Locators.button_submit_geo_position))
-        self.driver.find_element_by_xpath(Locators.button_submit_geo_position).click()
+        self.app.element_to_be_clickable((By.CSS_SELECTOR, Locators.button_submit_geo_position))
+        self.driver.find_element_by_css_selector(Locators.button_submit_geo_position).click()
 
     def click_choose_another_country(self):
         self.app.element_to_be_clickable((By.XPATH, Locators.button_choose_another_country))

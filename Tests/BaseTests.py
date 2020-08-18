@@ -63,4 +63,6 @@ def test_assert_ad_page(spacemirfixture):
 
 def test_new_registration(spacemirfixture):
     spacemirfixture.open_main_page()
+    spacemirfixture.geo.click_submit_geo_position()
     spacemirfixture.main_page.check_elements_on_main_page()
+
