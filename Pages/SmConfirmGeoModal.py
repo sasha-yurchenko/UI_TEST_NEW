@@ -20,12 +20,6 @@ class GeoModal:
         self.button_choose_another_country = Locators.button_choose_another_country
         self.modal_geo_1 = Locators.geo_modal_first
 
-    def void_name_city(self, name_city):
-        self.driver.find_element_by_xpath(Locators.field_name_city_xpath).send_keys(name_city)
-
-    def void_name_country(self, name_country):
-        self.driver.find_element_by_xpath(Locators.field_name_countries_xpath).send_keys(name_country)
-
     def click_submit_geo(self):
         try:
             self.driver.find_element_by_xpath(Locators.submit_geo_xpath).click()
@@ -33,33 +27,38 @@ class GeoModal:
         except ElementClickInterceptedException:
             return False and self.app.destroy()
 
-    def click_name_countries(self):
-        self.app.text_to_be_present_in_element((By.XPATH, Locators.button_check_counties_xpath), "São Paulo")
-        self.driver.find_element_by_xpath(Locators.button_check_counties_xpath).click()
-
-    def click_name_city(self):
-        self.app.text_to_be_present_in_element((By.XPATH, Locators.button_check_city_xpath), "São Paulo")
-        self.driver.find_element_by_xpath(Locators.button_check_city_xpath).click()
-
-    def wait_for_name_countries(self):
-        self.app.text_to_be_present_in_element((By.XPATH, Locators.button_check_counties_xpath), "Россия")
-
-    def assert_name_geo(self):
+    def country_selection(self, country, city):
         try:
-            self.app.text_to_be_present_in_element_value((By.XPATH, Locators.search_wrap_geo_xpath), 'São Paulo')
+            self.driver.find_element_by_xpath(Locators.field_name_countries_xpath).send_keys(country)
+            self.app.text_to_be_present_in_element((By.XPATH, Locators.button_check_counties_xpath), country)
+            self.driver.find_element_by_xpath(Locators.button_check_counties_xpath).click()
+            self.driver.find_element_by_xpath(Locators.field_name_city_xpath).send_keys(city)
+            self.app.text_to_be_present_in_element((By.XPATH, Locators.button_check_city_xpath), city)
+            self.driver.find_element_by_xpath(Locators.button_check_city_xpath).click()
+            self.driver.find_element_by_xpath(Locators.submit_geo_xpath).click()
+
             return True
         except NoSuchElementException:
             return False and self.app.destroy()
 
-    def assertion_field_geo(self):  # Проверяем что в данной строке имеются элементы
-        return len(self.driver.find_elements_by_xpath \
-                (
-                "/html/body/sm-root/sm-base-layout/sm-header/div/div/sm-global-geo/div/div/div/div/input")) > 0
+    def assert_name_geo(self, city):
+        try:
+            self.app.text_to_be_present_in_element_value((By.CSS_SELECTOR, Locators.search_wrap_geo_xpath), city)
+            return True
+        except NoSuchElementException:
+            return False and self.app.destroy()
+
+    def assert_name_country_header(self, city):
+        try:
+            self.app.text_to_be_present_in_element_value((By.CSS_SELECTOR, Locators.search_wrap_geo_xpath), city)
+            return True
+        except TimeoutException:
+            return False and self.app.destroy()
 
     def click_submit_geo_position(self):
         self.app.element_to_be_clickable((By.CSS_SELECTOR, Locators.button_submit_geo_position))
         self.driver.find_element_by_css_selector(Locators.button_submit_geo_position).click()
 
     def click_choose_another_country(self):
-        self.app.element_to_be_clickable((By.XPATH, Locators.button_choose_another_country))
-        self.driver.find_element_by_xpath(Locators.button_choose_another_country).click()
+        self.app.element_to_be_clickable((By.CSS_SELECTOR, Locators.button_choose_another_country))
+        self.driver.find_element(By.CSS_SELECTOR, Locators.button_choose_another_country).click()

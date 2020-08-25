@@ -16,10 +16,10 @@ class Header:
         self.interface_language_list = Locators.interface_language_list
         self.button_confirm_language_interface = Locators.button_confirm
         self.button_main_directory_catalog = Locators.button_main_directory
-        self.button_close_main_directory = Locators.close_main_directory
         self.main_logo_headers = Locators.main_logo_headers
         self.field_search_headers = Locators.field_search_headers
         self.drop_down_list_geo = Locators.drop_down_list_geo
+        self.button_add_product = Locators.add_product_button
 
     def click_button_login_header(self):
         self.driver.find_element_by_css_selector(Locators.button_login).click()
@@ -43,7 +43,7 @@ class Header:
         self.driver.find_element_by_xpath(Locators.button_main_directory).click()
 
     def close_main_catalog(self):
-        self.driver.find_element_by_xpath(Locators.close_main_directory).click()
+        self.driver.find_element_by_xpath(Locators.button_main_directory).click()
 
     def click_logo_header(self):
         self.driver.find_element_by_xpath(Locators.main_logo_headers).click()

@@ -9,7 +9,7 @@ from Pages.ProductsPage import ProductsPage
 from Pages.MainHeader import Header
 from Pages.SmConfirmGeoModal import GeoModal
 from Pages.MainPage import MainPage
-
+from Pages.ConsturctPage import ConstructPage
 # инициализируем наш веб-драйвер и делаем из классов объекты страниц.
 
 
@@ -25,6 +25,7 @@ class App:
         self.head = Header(self)
         self.geo = GeoModal(self)
         self.main_page = MainPage(self)
+        self.constructor = ConstructPage(self)
         self.driver.implicitly_wait(10)
 
     # Методы ожидания
@@ -62,9 +63,9 @@ class App:
         driver = self.driver
         driver.get('https://t-front.spacemir.com/account/signin')
 
-    def open_ad_page(self):
+    def open_ad_page(self, url_products):
         driver = self.driver
-        driver.get('https://t-front.spacemir.com/products/5c24c083384fa011c82aa0a7?countryGeoCode=BR')
+        driver.get(url_products)
 
     # Данный метод закрывает веб-браузер и завершает процесс вебдрайвера.
     def destroy(self):

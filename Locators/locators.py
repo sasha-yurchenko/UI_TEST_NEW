@@ -1,14 +1,12 @@
 class Locators:
     # Login page objects
-    email_field_css_selector = "sm-signin div.sm-form-field:nth-child(1) input"
+    email_field_css_selector = "form .sm-form-field:nth-child(1) input"
     password_field_css_selector = "sm-signin div.sm-form-field:nth-child(2) input"
     login_button_xpath = 'sm-signin form button'
-    forgot_password = '/html/body/sm-root/sm-base-layout/div/sm-account/div/div/div[2]/sm-signin/form/div[3]/a'
-    field_email_for_forgot_password = '/html/body/sm-root/sm-base-layout/div/sm-account/div/div/div[' \
-                                      '2]/sm-restore/form/div/input '
-    button_send_email_for_forgot_password = '/html/body/sm-root/sm-base-layout/div/sm-account/div/div/div[' \
-                                            '2]/sm-restore/form/button '
-    text_fail_auth_xpath = '/html/body/sm-root/sm-base-layout/div[2]/sm-account/div/div/div[2]/div'
+    forgot_password = 'a.link'
+    field_email_for_forgot_password = "sm-restore input"
+    button_send_email_for_forgot_password = 'sm-restore form button'
+    text_fail_auth_xpath = 'p.text-failure'
 
     # Profile page objects
     button_profile_menu_xpath = '.user-button img '
@@ -27,17 +25,16 @@ class Locators:
     # Main Headers objects
     button_login = 'div.auth-nav a:nth-child(1)'
     button_registration = 'div.auth-nav a:nth-child(1)'
-    change_language_interface = '/html/body/sm-root/sm-base-layout/sm-header/div/div/sm-locale-select/div'
+    change_language_interface = 'sm-locale-select :nth-child(1)'
     close_language_interface = '//*[@id="sm-overlay-host-1"]/div/sm-locale-select-modal/div[2]/i'
     interface_language_list = '//*[@id="sm-overlay-host-1"]/div/sm-locale-select-modal/sm-select/div/div/i[1]'
     button_confirm = '//*[@id="sm-overlay-host-1"]/div/sm-locale-select-modal/button'
-    button_main_directory = '/html/body/sm-root/sm-base-layout/sm-header/div/div/div[1]/i'
-    close_main_directory = '/html/body/sm-root/sm-base-layout/sm-header/div/div/div[1]/i'
-    main_logo_headers = '/html/body/sm-root/sm-base-layout/sm-header/div/div/a'
-    field_search_headers = '/html/body/sm-root/sm-base-layout/sm-header/div/div/sm-global-search/div/form/input'
-    drop_down_list_geo = '//div/div/div/div/i'
-    button_favorite = '/html/body/sm-root/sm-base-layout/sm-header/div/div/div[3]/a/i'
-    field_geo = '/html/body/sm-root/sm-base-layout/sm-header/div/div/sm-global-geo'
+    button_main_directory = '.catalog-button :nth-child(1)'
+    main_logo_headers = 'a.logo.flex'
+    field_search_headers = 'sm-global-search input'
+    drop_down_list_geo = 'div.select-wrap i'
+    button_favorite = '.nav-button a'
+    field_geo = 'sm-global-geo input'
 
     # Products page objects
     choice_category_in_catalog = '//*[@id="sm-overlay-host-0"]/div/sm-dropdown-catalog/sm-catalog/div/div/div[3]'
@@ -69,17 +66,25 @@ class Locators:
     field_name_countries_xpath = '//div/sm-geo-for-search-modal/div[2]/div[1]/div[1]/input'
     button_check_counties_xpath = '//div/sm-geo-for-search-modal/div[2]/div[1]/div[2]/ul/li'
     field_name_city_xpath = '//div/sm-geo-for-search-modal/div[2]/div[2]/div[1]/input'
-    search_wrap_geo_xpath = '/html/body/sm-root/sm-base-layout/div[2]/sm-entry-page/div/div[2]/div/div/sm-global-geo/div/div/div/div/span'
+    search_wrap_geo_xpath = 'sm-global-geo :nth-child(2) input'
     geo_modal_first = '//*[@id="sm-overlay-host-2"]/div/sm-confirm-geo-modal/span'
     button_check_city_xpath = '/html/body/div[2]/div[2]/div/sm-geo-for-search-modal/div[2]/div[2]/div[2]/ul/li[1]'
 
     # Main Page
-    add_product_button = '[class = "add-product-button"]'
+    add_product_button = 'sm-header :nth-child(8)'
     elements_top_blocks = '.top-blocks:nth-child(1)>.title.m-b-12'
     search_button = '.is-desktop:nth-child(1)>.search-button'
     input_search = '.ng-untouched:nth-child(1).sm-input.search-wrap'
     bottom_buttons_1 = 'div.bottom-buttons>button:nth-child(1)'
     bottom_buttons_2 = 'div.bottom-buttons>button:nth-child(2)'
 
+# Construct Page
 
+    select_main_category = 'div.main-categories :nth-child(1)'
+    select_nested_category = 'div.category-list :nth-child(1)'
+    category_path = 'div.displayed-category-path span:nth-child(1)'
+    change_link = '.displayed-category-path .r-side'
+    tab_sale = '.sm-form-field .sm-checkbox:nth-child(1)'
+    tab_sell = '.sm-form-field .sm-checkbox:nth-child(2)'
+    input_google_country = 'sm-google-map input'
 

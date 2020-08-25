@@ -17,10 +17,10 @@ class ProfilePage:
         self.button_favorite = Locators.button_favorite
 
     def click_button_profile(self):
-        self.driver.find_element_by_xpath(Locators.button_profile_menu_xpath).click()
+        self.driver.find_element(By.CSS_SELECTOR, Locators.button_profile_menu_xpath).click()
 
     def click_button_log_out(self):
-        self.driver.find_element_by_xpath(Locators.button_log_out_xpath).click()
+        self.driver.find_element(By.CSS_SELECTOR, Locators.button_log_out_xpath).click()
 
     def check_exists_profile_elements(self):
         try:
