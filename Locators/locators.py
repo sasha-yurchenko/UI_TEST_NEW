@@ -87,4 +87,16 @@ class Locators:
     tab_sale = '.sm-form-field .sm-checkbox:nth-child(1)'
     tab_sell = '.sm-form-field .sm-checkbox:nth-child(2)'
     input_google_country = 'sm-google-map input'
+    list_country = 'div.pac-container .pac-item:nth-child(1)'
+    name_contry_list = 'div.pac-container .pac-item:nth-child(1) span:nth-child(3)'
+    button_publication = '.constructor-body .actions button:nth-child(2)'
+    button_draft = 'div.constructor-body .actions button:nth-child(1)'
+    invalid_input_select = '.select-wrap .invalid-input'
+    value_in_dropdown_select = '.virtual-scroll-container :nth-child(2)'
+    value_in_dropdown_multi_select = 'sm-multiselect-dropdown-menu .virtual-scroll-container  div:nth-child(2)'
+    discription_in_const = 'textarea'
+    price_input = 'sm-price input'
+    input_phone_invalid = 'sm-phone-by-country .invalid-input'
+    select_geo_phone = 'sm-phone-by-country sm-select i'
+
 

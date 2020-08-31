@@ -62,3 +62,4 @@ def test_new_registration(spacemirfixture):
     spacemirfixture.auth.click_login()
     assert spacemirfixture.profile.check_exists_profile_elements()
     spacemirfixture.constructor.create_new_product('Sao')
+

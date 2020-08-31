@@ -10,6 +10,8 @@ from Pages.MainHeader import Header
 from Pages.SmConfirmGeoModal import GeoModal
 from Pages.MainPage import MainPage
 from Pages.ConsturctPage import ConstructPage
+from selenium.webdriver.common.action_chains import ActionChains
+
 # инициализируем наш веб-драйвер и делаем из классов объекты страниц.
 
 
@@ -26,6 +28,7 @@ class App:
         self.geo = GeoModal(self)
         self.main_page = MainPage(self)
         self.constructor = ConstructPage(self)
+        self.actionChains = ActionChains(self.driver)
         self.driver.implicitly_wait(10)
 
     # Методы ожидания
@@ -40,7 +43,8 @@ class App:
 
     # Ожидание для проверки элемента, является ли видимым и включается так, что вы можете нажать на нее.
     def element_to_be_clickable(self, element):
-        WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(element))
+        print(element)
+        return WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(element))
 
     # Ожидание проверки наличия данного текста в указанном элементе.
     def text_to_be_present_in_element(self, locator, text_):
