@@ -33,26 +33,8 @@ class ConstructPage:
 
     def choosing_value_in_select(self):
         try:
-            invalidElements_selector = self.driver.find_elements(By.CSS_SELECTOR, Locators.invalid_input_select)
-            invalidElements_multiselector = self.driver.find_elements(By.CSS_SELECTOR, )
-            for invalidElement in invalidElements_selector, invalidElements_multiselector :
-                invalidElement.click()
-                dropDown = self.driver.find_elements(By.CSS_SELECTOR, Locators.value_in_dropdown)
-                if len(dropDown) == 0:
-                    input
-                else:
-                    find multi or select
-                if len(elements) < 1:
-                    elements = self.driver.find_elements(By.CSS_SELECTOR, Locators.value_in_dropdown_multi_select)
-                if len(elements) < 1:
-                    # input
-                    continue
-                self.app.element_to_be_clickable((By.CSS_SELECTOR, Locators.value_in_dropdown_select))
-                print(elements)
-                elements[0].click()
+            value_on_select = self.driver.find_element(By.CSS_SELECTOR, Locators.value_in_dropdown_select)
+            value_on_select.click()
             return True
         except NoSuchElementException:
             return False and self.app.destroy()
-
-
-
