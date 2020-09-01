@@ -32,9 +32,11 @@ class ConstructPage:
             return False and self.app.destroy()
 
     def choosing_value_in_select(self):
-        try:
-            value_on_select = self.driver.find_element(By.CSS_SELECTOR, Locators.value_in_dropdown_select)
-            value_on_select.click()
-            return True
-        except NoSuchElementException:
-            return False and self.app.destroy()
+        call_select = self.driver.find_elements(By.CSS_SELECTOR, Locators.select_multiselect_wrap)
+        for select in call_select:
+            select.click()
+            choice_value = self.driver.find_element(By.CSS_SELECTOR, Locators.value_in_dropdown_select)
+            choice_value.click()
+
+
+
