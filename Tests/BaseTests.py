@@ -24,7 +24,7 @@ def test_assert_check_country_and_city(spacemirfixture):
     assert spacemirfixture.geo.assert_name_geo('São Paulo')
     spacemirfixture.head.click_button_login_header()
     spacemirfixture.auth.auth('1@1.ru', '12345678')
-    assert spacemirfixture.auth.check_text_fail_auth()
+    spacemirfixture.auth.check_text_fail_auth()
     print('TestPassed')
 
 

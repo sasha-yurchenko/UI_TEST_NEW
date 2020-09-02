@@ -66,7 +66,7 @@ class Locators:
     field_name_countries_xpath = '//div/sm-geo-for-search-modal/div[2]/div[1]/div[1]/input'
     button_check_counties_xpath = '//div/sm-geo-for-search-modal/div[2]/div[1]/div[2]/ul/li'
     field_name_city_xpath = '//div/sm-geo-for-search-modal/div[2]/div[2]/div[1]/input'
-    search_wrap_geo_xpath = 'sm-global-geo :nth-child(2) input'
+    search_wrap_geo_xpath = 'sm-global-geo :nth-child(2) span'
     geo_modal_first = '//*[@id="sm-overlay-host-2"]/div/sm-confirm-geo-modal/span'
     button_check_city_xpath = '/html/body/div[2]/div[2]/div/sm-geo-for-search-modal/div[2]/div[2]/div[2]/ul/li[1]'
 
