@@ -18,7 +18,7 @@ class ConstructPage:
     def create_new_product(self, country):
         try:
             self.driver.find_element(By.CSS_SELECTOR, Locators.add_product_button).click()
-            self.app.element_to_be_clickable((By.CSS_SELECTOR, Locators.select_main_category))
+            self.app.presence_of_element_located((By.CSS_SELECTOR, Locators.select_main_category))
             self.driver.find_element(By.CSS_SELECTOR, Locators.select_main_category).click()
             self.driver.find_element(By.CSS_SELECTOR, Locators.select_nested_category).click()
             self.app.presence_of_element_located((By.CSS_SELECTOR, Locators.category_path))
@@ -37,7 +37,16 @@ class ConstructPage:
         for select in call_select:
             self.driver.execute_script("return arguments[0].scrollIntoView();", select)
             select.click()
-            if self.driver.find_element(By.CSS_SELECTOR, Locators.value_in_dropdown_select):
-                self.driver.find_element(By.CSS_SELECTOR, Locators.value_in_dropdown_select).click()
-            else:
+            try:
+                if self.driver.find_element(By.CSS_SELECTOR, Locators.value_in_dropdown_select).is_displayed():
+                    self.driver.find_element(By.CSS_SELECTOR, Locators.value_in_dropdown_select).click()
+                    print("it's element select")
+            except NoSuchElementException:
                 self.driver.find_element(By.CSS_SELECTOR, Locators.value_in_dropdown_multi_select).click()
+                select.click()
+                print("it's element multi select")
+        input = self.driver.find_elements(By.CSS_SELECTOR, Locators.)
+
+
+
+

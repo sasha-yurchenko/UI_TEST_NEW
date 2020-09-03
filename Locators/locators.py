@@ -95,6 +95,7 @@ class Locators:
     constructor_body = '.constructor-body form .product-rows .m-t-24 .__no-padding'
     value_in_dropdown_select = 'sm-select-dropdown-menu :nth-child(3)'
     value_in_dropdown_multi_select = 'sm-multiselect-dropdown-menu .virtual-scroll-container  div:nth-child(2)'
+    input_construct = ''
     discription_in_const = 'textarea'
     price_input = 'sm-price input'
     input_phone_invalid = 'sm-phone-by-country .invalid-input'
