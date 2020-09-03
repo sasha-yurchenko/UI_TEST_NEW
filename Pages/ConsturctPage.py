@@ -2,6 +2,7 @@ from Locators.locators import Locators
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException, TimeoutException
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.action_chains import ActionChains
 
 
 class ConstructPage:
@@ -34,9 +35,9 @@ class ConstructPage:
     def choosing_value_in_select(self):
         call_select = self.driver.find_elements(By.CSS_SELECTOR, Locators.select_multiselect_wrap)
         for select in call_select:
+            self.driver.execute_script("return arguments[0].scrollIntoView();", select)
             select.click()
-            choice_value = self.driver.find_element(By.CSS_SELECTOR, Locators.value_in_dropdown_select)
-            choice_value.click()
-
-
-
+            if self.driver.find_element(By.CSS_SELECTOR, Locators.value_in_dropdown_select):
+                self.driver.find_element(By.CSS_SELECTOR, Locators.value_in_dropdown_select).click()
+            else:
+                self.driver.find_element(By.CSS_SELECTOR, Locators.value_in_dropdown_multi_select).click()

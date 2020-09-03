@@ -92,6 +92,7 @@ class Locators:
     button_publication = '.constructor-body .actions button:nth-child(2)'
     button_draft = 'div.constructor-body .actions button:nth-child(1)'
     select_multiselect_wrap = '.__no-padding .__attribute .form-field-item .select-wrap i:nth-child(2)'
+    constructor_body = '.constructor-body form .product-rows .m-t-24 .__no-padding'
     value_in_dropdown_select = 'sm-select-dropdown-menu :nth-child(3)'
     value_in_dropdown_multi_select = 'sm-multiselect-dropdown-menu .virtual-scroll-container  div:nth-child(2)'
     discription_in_const = 'textarea'

@@ -2,6 +2,11 @@ from selenium import webdriver
 import math
 
 
+def __init__(self, app):
+    self.app = app
+    self.driver = self.app.driver
+
+
 def calc(x):
     return str(math.log(abs(12 * math.sin(int(x)))))
 
@@ -17,7 +22,7 @@ try:
     answer.send_keys(y)
     driver.find_element_by_id("robotCheckbox").click()
     button_robot = driver.find_element_by_id("robotsRule")
-    driver.execute_script("return arguments[0].scrollIntoView(true);", button_robot)
+    driver.app.scroll_page(button_robot)
     button_robot.click()
     button_submit = driver.find_element_by_css_selector('form button')
     driver.execute_script("return arguments[0].scrollIntoView(true);", button_submit)
