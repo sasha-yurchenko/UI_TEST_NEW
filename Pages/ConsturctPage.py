@@ -45,7 +45,7 @@ class ConstructPage:
                 self.driver.find_element(By.CSS_SELECTOR, Locators.value_in_dropdown_multi_select).click()
                 select.click()
                 print("it's element multi select")
-        input = self.driver.find_elements(By.CSS_SELECTOR, Locators.)
+
 
 
 
