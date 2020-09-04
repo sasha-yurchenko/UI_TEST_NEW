@@ -1,6 +1,7 @@
 from Locators.locators import Locators
 from selenium.webdriver.common.by import By
-from selenium.common.exceptions import NoSuchElementException, TimeoutException
+from selenium.common.exceptions import NoSuchElementException, TimeoutException, ElementClickInterceptedException, \
+    ScreenshotException
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
 
@@ -36,17 +37,24 @@ class ConstructPage:
         call_select = self.driver.find_elements(By.CSS_SELECTOR, Locators.select_multiselect_wrap)
         for select in call_select:
             self.driver.execute_script("return arguments[0].scrollIntoView();", select)
-            select.click()
             try:
-                if self.driver.find_element(By.CSS_SELECTOR, Locators.value_in_dropdown_select).is_displayed():
+                select.click()
+            except ElementClickInterceptedException:
+                continue
+            try:
+                if self.driver.find_element(By.CSS_SELECTOR,
+                                            Locators.value_in_dropdown_select).is_displayed():
                     self.driver.find_element(By.CSS_SELECTOR, Locators.value_in_dropdown_select).click()
                     print("it's element select")
             except NoSuchElementException:
                 self.driver.find_element(By.CSS_SELECTOR, Locators.value_in_dropdown_multi_select).click()
                 select.click()
                 print("it's element multi select")
-
-
-
-
-
+        void_input = self.driver.find_elements(By.CSS_SELECTOR, Locators.input_construct)
+        if len(void_input) > 0:
+            for void in void_input:
+                self.driver.execute_script("return arguments[0].scrollIntoView();", void)
+                void.send_keys("123")
+            check_box = self.driver.find_elements(By.CSS_SELECTOR, Locators.checkbox_const)
+            self.app.execute_script(check_box)
+            check_box.click()

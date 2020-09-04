@@ -15,6 +15,8 @@ from selenium.webdriver.common.action_chains import ActionChains
 # инициализируем наш веб-драйвер и делаем из классов объекты страниц.
 
 
+
+
 class App:
 
     def __init__(self):
@@ -28,7 +30,7 @@ class App:
         self.geo = GeoModal(self)
         self.main_page = MainPage(self)
         self.constructor = ConstructPage(self)
-        self.driver.implicitly_wait(10)
+        self.driver.implicitly_wait(5)
 
     # Методы ожидания
 
@@ -76,6 +78,10 @@ class App:
 
     def refresh(self):
         self.driver.refresh()
+
+    @staticmethod
+    def execute_script(locator):
+        return "return arguments[0].scrollIntoView();", locator
 
     @staticmethod
     def browser_options(options):
