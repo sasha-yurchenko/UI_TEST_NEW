@@ -6,7 +6,7 @@ class Locators:
     forgot_password = 'a.link'
     field_email_for_forgot_password = "sm-restore input"
     button_send_email_for_forgot_password = 'sm-restore form button'
-    text_fail_auth_xpath = 'p.text-failure'
+    text_fail_auth_xpath = '.sm-tabs-content p'
 
     # Profile page objects
     button_profile_menu_xpath = '.user-button img '
@@ -101,4 +101,5 @@ class Locators:
     input_phone_invalid = 'sm-phone-by-country .invalid-input'
     select_geo_phone = 'sm-phone-by-country sm-select i'
     price_range = 'div.price-range'
-    checkbox_const = 'sm-checkbox-group '
+    checkbox_const = 'sm-checkbox-group span:nth-child(2)'
+    radio_btn = '.ButtonToggle .sm-form-field div:nth-child(1)'

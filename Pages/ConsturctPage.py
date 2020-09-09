@@ -55,6 +55,16 @@ class ConstructPage:
             for void in void_input:
                 self.driver.execute_script("return arguments[0].scrollIntoView();", void)
                 void.send_keys("123")
-            check_box = self.driver.find_elements(By.CSS_SELECTOR, Locators.checkbox_const)
-            self.app.execute_script(check_box)
-            check_box.click()
+        check_box = self.driver.find_elements(By.CSS_SELECTOR, Locators.checkbox_const)
+        if len(check_box) > 0:
+            for value in check_box:
+                self.driver.execute_script("return arguments[0].scrollIntoView();", value)
+                value.click()
+            radio = self.driver.find_elements(By.CSS_SELECTOR, Locators.radio_btn)
+            self.driver.execute_script("return arguments[0].scrollIntoView();", radio)
+            radio.click()
+            print("radio_btn is not present")
+        radio_btn = self.driver.find_elements()
+
+
+

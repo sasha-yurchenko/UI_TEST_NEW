@@ -35,9 +35,9 @@ class LoginPage:
 
     def check_text_fail_auth(self):
         try:
-            text_fail = self.driver.find_element(By.CSS_SELECTOR, Locators.text_fail_auth_xpath)
-            text_fail_auth = text_fail
-            assert " Ошибка, пары логин пароль не существует или они не верны " == text_fail_auth
+            elem = self.driver.find_element(By.CSS_SELECTOR, Locators.text_fail_auth_xpath)
+            text_fail_auth = elem.text
+            assert text_fail_auth == "Ошибка, пары логин пароль не существует или они не верны"
             return True
         except NoSuchElementException:
             return False and self.app.destroy()

@@ -24,12 +24,13 @@ class ProfilePage:
 
     def check_exists_profile_elements(self):
         try:
-            self.driver.find_element(By.CSS_SELECTOR, Locators.start_block_profile)
-            self.driver.find_element(By.CSS_SELECTOR, Locators.top_block_profile)
-            self.driver.find_element(By.CSS_SELECTOR, Locators.sidebar_profile)
-            self.driver.find_element(By.CSS_SELECTOR, Locators.button_apartaments)
-            self.driver.find_element(By.CSS_SELECTOR, Locators.button_favorite_in_sidebar)
-            return True
+            block = self.driver.find_element(By.CSS_SELECTOR, Locators.start_block_profile)
+            top_block = self.driver.find_element(By.CSS_SELECTOR, Locators.top_block_profile)
+            sider = self.driver.find_element(By.CSS_SELECTOR, Locators.sidebar_profile)
+            btn_apa = self.driver.find_element(By.CSS_SELECTOR, Locators.button_apartaments)
+            fav_btn = self.driver.find_element(By.CSS_SELECTOR, Locators.button_favorite_in_sidebar)
+            if block and top_block and sider and btn_apa and fav_btn.is_displayed():
+                return True
         except NoSuchElementException:
             print('Zero element for U!')
-            return False
+            self.app.destroy()

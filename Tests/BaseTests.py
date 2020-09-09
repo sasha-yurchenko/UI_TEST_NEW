@@ -33,7 +33,6 @@ def test_auth_profile(spacemirfixture):
     assert spacemirfixture.space.assertion_page_auth() == "https://t-front.spacemir.com/account/signin"
     spacemirfixture.geo.click_submit_geo_position()
     spacemirfixture.auth.auth('1@1.ru', '123456')
-    spacemirfixture.auth.click_login()
     assert spacemirfixture.profile.check_exists_profile_elements()
     spacemirfixture.profile.click_button_profile()
     spacemirfixture.profile.click_button_log_out()
@@ -46,7 +45,6 @@ def test_assert_ad_page(spacemirfixture):
     spacemirfixture.geo.country_selection('Бразилия', 'Rio')
     # assert spacemirfixture.geo.assert_name_country_header('')
     spacemirfixture.auth.auth('1@1.ru', '123456')
-    spacemirfixture.auth.click_login()
     assert spacemirfixture.profile.check_exists_profile_elements()
     spacemirfixture.open_ad_page('https://t-front.spacemir.com/products/5c24c083384fa011c82aa0a7?countryGeoCode=BR')
     assert spacemirfixture.product.tab_exist_product_page()
