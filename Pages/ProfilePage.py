@@ -17,18 +17,18 @@ class ProfilePage:
         self.button_favorite = Locators.button_favorite
 
     def click_button_profile(self):
-        self.driver.find_element(By.CSS_SELECTOR, Locators.button_profile_menu_xpath).click()
+        self.driver.find_element(*Locators.button_profile_menu_xpath).click()
 
     def click_button_log_out(self):
-        self.driver.find_element(By.CSS_SELECTOR, Locators.button_log_out_xpath).click()
+        self.driver.find_element(*Locators.button_log_out_xpath).click()
 
     def check_exists_profile_elements(self):
         try:
-            block = self.driver.find_element(By.CSS_SELECTOR, Locators.start_block_profile)
-            top_block = self.driver.find_element(By.CSS_SELECTOR, Locators.top_block_profile)
-            sider = self.driver.find_element(By.CSS_SELECTOR, Locators.sidebar_profile)
-            btn_apa = self.driver.find_element(By.CSS_SELECTOR, Locators.button_apartaments)
-            fav_btn = self.driver.find_element(By.CSS_SELECTOR, Locators.button_favorite_in_sidebar)
+            block = self.driver.find_element(*Locators.start_block_profile)
+            top_block = self.driver.find_element(*Locators.top_block_profile)
+            sider = self.driver.find_element(*Locators.sidebar_profile)
+            btn_apa = self.driver.find_element(*Locators.button_apartaments)
+            fav_btn = self.driver.find_element(*Locators.button_favorite_in_sidebar)
             if block and top_block and sider and btn_apa and fav_btn.is_displayed():
                 return True
         except NoSuchElementException:

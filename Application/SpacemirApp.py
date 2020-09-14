@@ -11,6 +11,7 @@ from Pages.SmConfirmGeoModal import GeoModal
 from Pages.MainPage import MainPage
 from Pages.ConsturctPage import ConstructPage
 from selenium.webdriver.common.action_chains import ActionChains
+import os
 
 
 # инициализируем наш веб-драйвер и делаем из классов объекты страниц.
@@ -76,6 +77,10 @@ class App:
 
     def refresh(self):
         self.driver.refresh()
+
+    @staticmethod
+    def path():
+        return os.path.abspath(os.path.dirname('D:\Projects Spacemir V2\sm-test\Tests'))
 
     @staticmethod
     def browser_options(options):
