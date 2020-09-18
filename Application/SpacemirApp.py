@@ -1,8 +1,8 @@
 from selenium import webdriver
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import NoSuchElementException, TimeoutException, ElementClickInterceptedException
 
-from Pages.SpaceMainPage import SpaceMainHelper
 from Pages.LoginPage import LoginPage
 from Pages.ProfilePage import ProfilePage
 from Pages.ProductsPage import ProductsPage
@@ -22,7 +22,6 @@ class App:
     def __init__(self):
         browser_options = self.browser_options(options='start-maximized')
         self.driver = webdriver.Chrome(chrome_options=browser_options)
-        self.space = SpaceMainHelper(self)
         self.auth = LoginPage(self)
         self.profile = ProfilePage(self)
         self.product = ProductsPage(self)
@@ -47,16 +46,16 @@ class App:
         return WebDriverWait(self.driver, 20).until(EC.element_to_be_clickable(element))
 
     # Ожидание проверки наличия данного текста в указанном элементе.
-    def text_to_be_present_in_element(self, locator, text_):
-        return WebDriverWait(self.driver, 5).until(EC.text_to_be_present_in_element(locator, text_))
+    def text_to_be_present_in_element(self, by_type, element, text):
+        return WebDriverWait(self.driver, 5).until(EC.text_to_be_present_in_element((by_type, element), text))
 
     # Ожидание для проверки, присутствует ли данный текст в элементе
     def text_to_be_present_in_element_value(self, locator, text_):
-        return WebDriverWait(self.driver, 5).until(EC.text_to_be_present_in_element(locator, text_))
+        return WebDriverWait(self.driver, 5).until(EC.text_to_be_present_in_element((locator, text_)))
 
     # Ожидание проверки наличия элемента в DOM страницы. Это не обязательно означает, что элемент виден. Локатор - используется для поиска элемента возвращает WebElement после его нахождения
     def presence_of_element_located(self, locator):
-        WebDriverWait(self.driver, 5).until(EC.presence_of_element_located(locator))
+        return WebDriverWait(self.driver, 5).until(EC.presence_of_element_located(locator))
 
     # Метод open_main_page открывает главную страницу сайта
     def open_main_page(self):

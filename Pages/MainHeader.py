@@ -18,7 +18,7 @@ class Header:
         self.button_add_product = Locators.add_product_button
 
     def click_button_login_header(self):
-        self.driver.find_element_by_css_selector(*Locators.button_login).click()
+        self.driver.find_element(*Locators.button_login).click()
 
     def click_button_registration_header(self):
         self.driver.find_element_by_xpath(*Locators.button_registration).click()

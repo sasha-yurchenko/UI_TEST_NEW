@@ -41,3 +41,6 @@ class LoginPage:
             return True
         except NoSuchElementException:
             return False and self.app.destroy()
+
+    def assertion_page_auth(self):
+        return self.driver.current_url

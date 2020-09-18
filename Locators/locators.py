@@ -1,5 +1,3 @@
-from typing import Tuple
-
 from selenium.webdriver.common.by import By
 
 
@@ -51,16 +49,13 @@ class Locators(object):
     # Geo Modal object
     button_submit_geo_position = (By.CSS_SELECTOR, '.actions :nth-child(1)')
     button_choose_another_country = (By.CSS_SELECTOR, '.actions :nth-child(2)')
-    confirm_geo_modal = (By.CSS_SELECTOR, '//*[@id="sm-overlay-host-2"]/div/sm-confirm-geo-modal')
-    submit_geo_xpath = (By.CSS_SELECTOR, '//div/sm-geo-for-search-modal/div[3]/button[1]')
-    button_cancel_geo_xpath = (By.CSS_SELECTOR, '/html/body/div[2]/div/div/sm-geo-for-search-modal/div[3]/button[2]')
-    field_name_countries_xpath = (By.CSS_SELECTOR, '//div/sm-geo-for-search-modal/div[2]/div[1]/div[1]/input')
-    button_check_counties_xpath = (By.CSS_SELECTOR, '//div/sm-geo-for-search-modal/div[2]/div[1]/div[2]/ul/li')
-    field_name_city_xpath = (By.CSS_SELECTOR, '//div/sm-geo-for-search-modal/div[2]/div[2]/div[1]/input')
-    search_wrap_geo_xpath = (By.CSS_SELECTOR, 'sm-global-geo :nth-child(2) span')
-    geo_modal_first = (By.CSS_SELECTOR, '//*[@id="sm-overlay-host-2"]/div/sm-confirm-geo-modal/span')
-    button_check_city_xpath = (
-        By.CSS_SELECTOR, '/html/body/div[2]/div[2]/div/sm-geo-for-search-modal/div[2]/div[2]/div[2]/ul/li[1]')
+    submit_geo = (By.CSS_SELECTOR, '.modal-footer button:nth-child(1)')
+    btn_cancel_geo = (By.CSS_SELECTOR, '.modal-footer button:nth-child(2)')
+    geo_list_country = (By.CSS_SELECTOR, '.country .geo-list li')
+    geo_list_city = (By.CSS_SELECTOR, '.city .geo-list li:nth-child(1)')
+    field_name_country = (By.CSS_SELECTOR, '.country input')
+    field_name_city = (By.CSS_SELECTOR, '.city input')
+    search_wrap_geo = (By.CSS_SELECTOR, '.geo-place span')
 
     # Main Page
     add_product_button = (By.CSS_SELECTOR, 'sm-header :nth-child(8)')
@@ -70,6 +65,7 @@ class Locators(object):
     input_search = (By.CSS_SELECTOR, '.ng-untouched:nth-child(1).sm-input.search-wrap')
     bottom_buttons_1 = (By.CSS_SELECTOR, 'div.bottom-buttons>button:nth-child(1)')
     bottom_buttons_2 = (By.CSS_SELECTOR, 'div.bottom-buttons>button:nth-child(2)')
+    geo_place_name = (By.CSS_SELECTOR, '.geo-place span')
 
     # Construct Page
 

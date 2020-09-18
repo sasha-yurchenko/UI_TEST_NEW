@@ -33,4 +33,5 @@ class MainPage:
         except NoSuchElementException:
             print('Ничего не найдено')
 
-
+    def assertion_main_page(self):
+        return self.driver.current_url

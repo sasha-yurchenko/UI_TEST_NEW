@@ -1,30 +1,10 @@
-def test_assert_started_site(sm_2_fixture):
-    sm_2_fixture.open_main_page()
-    # Проверка есть ли строка «Spacemir» в имени страницы
-    assert "Spacemir" in sm_2_fixture.driver.title
-    # возвращает нам текущий url-адресс в строке
-    assert sm_2_fixture.space.assertion_main_page() == "https://t-front.spacemir.com/"
-    sm_2_fixture.geo.click_submit_geo_position()
-    # Проверяем наличие кнопки "Войти" в шапке
-    assert sm_2_fixture.space.assertion_button_log_in()
-    # Проверяем наличие кнопки "Регистрация" в шапке
-    assert sm_2_fixture.space.assertion_button_registration()
-    print('TestPassed')
-    sm_2_fixture.destroy()
-
-
 def test_assert_check_country_and_city(sm_2_fixture):
     sm_2_fixture.open_main_page()
     # Проверка есть ли заголовок «Spacemir» в имени страницы
     assert "Spacemir" in sm_2_fixture.driver.title
     # возвращает нам текущий url-адресс в строке
-    assert sm_2_fixture.space.assertion_main_page() == "https://t-front.spacemir.com/"
-    sm_2_fixture.geo.click_choose_another_country()
-    sm_2_fixture.geo.country_selection('Бразилия', 'São Paulo')
-    assert sm_2_fixture.geo.assert_name_geo('São Paulo')
-    sm_2_fixture.head.click_button_login_header()
-    sm_2_fixture.auth.auth('1@1.ru', '12345678')
-    sm_2_fixture.auth.check_text_fail_auth()
+    assert sm_2_fixture.main_page.assertion_main_page() == "https://t-front.spacemir.com/"
+    sm_2_fixture.geo.country_selection('São Paulo')
     print('TestPassed')
 
 
