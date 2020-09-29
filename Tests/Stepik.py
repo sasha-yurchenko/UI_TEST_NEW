@@ -2,25 +2,20 @@ from selenium import webdriver
 import math
 
 
-def calc(x):
-    return str(math.log(abs(12 * math.sin(int(x)))))
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium import webdriver
 
+browser = webdriver.Chrome()
 
-try:
-    driver = webdriver.Chrome()
-    driver.get('http://suninjuly.github.io/redirect_accept.html')
-    btn = driver.find_element_by_css_selector('button.trollface ')
-    window_before = driver.window_handles[0]
-    btn.click()
-    window_after = driver.window_handles[1]
-    driver.switch_to_window(window_after)
-    x_elem = driver.find_element_by_css_selector("#input_value")
-    x_element_treasure = x_elem.text
-    x = x_element_treasure
-    y = calc(x)
-    answer = driver.find_element_by_css_selector('.form-group input')
-    answer.send_keys(y)
-    btn_sub = driver.find_element_by_css_selector('button.btn')
-    btn_sub.click()
-finally:
-    print('y')
+browser.get("http://suninjuly.github.io/wait2.html")
+
+# говорим Selenium проверять в течение 5 секунд, пока кнопка не станет кликабельной
+button = WebDriverWait(browser, 5).until(
+        EC.element_to_be_clickable((By.ID, "verify"))
+    )
+button.click()
+message = browser.find_element_by_id("verify_message")
+
+assert "successful" in message.text

@@ -42,3 +42,10 @@ def test_new_registration(sm_2_fixture):
     sm_2_fixture.constructor.create_new_product('Sao')
     sm_2_fixture.constructor.choosing_value_in_constructor()
 
+
+def test_A001(sm_2_fixture):
+    sm_2_fixture.auth.registration()
+    sm_2_fixture.open_sign_page()
+    sm_2_fixture.auth.reg('1@1.ru', '123456')
+
+

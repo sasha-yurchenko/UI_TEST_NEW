@@ -3,13 +3,21 @@ from selenium.webdriver.common.by import By
 
 class Locators(object):
     # Login page objects
-    email_field_css_selector = (By.CSS_SELECTOR, "form .sm-form-field:nth-child(1) input")
-    password_field_css_selector = (By.CSS_SELECTOR, "sm-signin div.sm-form-field:nth-child(2) input")
-    login_button_xpath = (By.CSS_SELECTOR, 'sm-signin form button')
+    email_field_signin = (By.CSS_SELECTOR, "form .sm-form-field:nth-child(1) input")
+    password_field_signin = (By.CSS_SELECTOR, "sm-signin div.sm-form-field:nth-child(2) input")
+    email_field_signup = (By.CSS_SELECTOR, "form .sm-form-field:nth-child(1) input")
+    password_field_signup = (By.CSS_SELECTOR, "form .sm-form-field:nth-child(2) input")
+    confirm_password_signup = (By.CSS_SELECTOR, "")
+    login_button = (By.CSS_SELECTOR, 'sm-signin form button')
     forgot_password = (By.CSS_SELECTOR, 'a.link')
     field_email_for_forgot_password = (By.CSS_SELECTOR, "sm-restore input")
     button_send_email_for_forgot_password = (By.CSS_SELECTOR, 'sm-restore form button')
     text_fail_auth_xpath = (By.CSS_SELECTOR, '.sm-tabs-content p')
+    tab_signin = (By.CSS_SELECTOR, '.tabs-list li:nth-child(1)')
+    tab_signup = (By.CSS_SELECTOR, '.tabs-list li:nth-child(2)')
+    form_signup_field = (By.CSS_SELECTOR, 'form .sm-form-field input')
+    btn_submit_signin = (By.CSS_SELECTOR, "sm-signin form button")
+    btn_submit_signup = (By.CSS_SELECTOR, "sm-sign-up form button")
 
     # Profile page objects
     button_profile_menu_xpath = (By.CSS_SELECTOR, '.user-button img ')
@@ -96,3 +104,8 @@ class Locators(object):
     radio_btn = (By.CSS_SELECTOR, '.ButtonToggle .sm-form-field div:nth-child(1)')
     input_range = (By.CSS_SELECTOR, '.InputRange input')
     btn_photo = (By.CSS_SELECTOR, '.photo-loader input')
+
+    # Temp_Mail
+    btn_copy_mail = (By.CSS_SELECTOR, '.input-box-col:nth-child(2) button')
+    input_temp_mail = (By.CSS_SELECTOR, '.input-warp input')
+    copy_mail = (By.CSS_SELECTOR, ".show .tooltip-inner")
