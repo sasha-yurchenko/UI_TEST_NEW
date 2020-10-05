@@ -12,7 +12,8 @@ class Locators(object):
     forgot_password = (By.CSS_SELECTOR, 'a.link')
     field_email_for_forgot_password = (By.CSS_SELECTOR, "sm-restore input")
     button_send_email_for_forgot_password = (By.CSS_SELECTOR, 'sm-restore form button')
-    text_fail_auth_xpath = (By.CSS_SELECTOR, '.sm-tabs-content p')
+    text_fail_auth = (By.CSS_SELECTOR, '.sm-tabs-content p')
+    text_fail_field_length = (By.CSS_SELECTOR, 'sm-form-field-errors li')
     tab_signin = (By.CSS_SELECTOR, '.tabs-list li:nth-child(1)')
     tab_signup = (By.CSS_SELECTOR, '.tabs-list li:nth-child(2)')
     form_signup_field = (By.CSS_SELECTOR, 'form .sm-form-field input')
@@ -32,6 +33,7 @@ class Locators(object):
     avatar_image = (By.CSS_SELECTOR, "div.avatar-block sm-avatar")
     button_apartaments = (By.CSS_SELECTOR, '.site-content sm-profile li:nth-child(1)')
     button_favorite_in_sidebar = (By.CSS_SELECTOR, '.site-content sm-profile li:nth-child(2)')
+    welcome_modal = (By.CSS_SELECTOR, 'sm-welcome-modal .info-modal')
 
     # Main Headers objects
     button_login = (By.CSS_SELECTOR, 'div.auth-nav a:nth-child(1)')
@@ -109,3 +111,11 @@ class Locators(object):
     btn_copy_mail = (By.CSS_SELECTOR, '.input-box-col:nth-child(2) button')
     input_temp_mail = (By.CSS_SELECTOR, '.input-warp input')
     copy_mail = (By.CSS_SELECTOR, ".show .tooltip-inner")
+    mail_one = (By.CSS_SELECTOR, ".inbox-dataList li:nth-child(2) .col-box:nth-child(2) a")
+    mail_two = (By.CSS_SELECTOR, ".inbox-dataList li:nth-child(3) .col-box:nth-child(2) a")
+    list_mail = (By.CSS_SELECTOR, ".inbox-dataList li .col-box:nth-child(2) a")
+    btn_on_letter = (By.CSS_SELECTOR, "td a")
+    btn_update = (By.ID, "click-to-refresh")
+
+    # Page_email_confirm
+    email_confirm = (By.CSS_SELECTOR, "sm-email-confirm .flex")

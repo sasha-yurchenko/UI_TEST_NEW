@@ -39,23 +39,29 @@ class App:
 
     # Ожидание проверки наличия хотя бы одного элементана веб-странице.
     def visibility_element_expected_conditions(self, element):
-        return WebDriverWait(self.driver, 10).until(EC.visibility_of(element))
+        return WebDriverWait(self.driver, 20).until((EC.visibility_of(element)))
 
     # Ожидание для проверки элемента, является ли видимым и включается так, что вы можете нажать на нее.
     def element_to_be_clickable(self, locator):
         return WebDriverWait(self.driver, 20).until((EC.element_to_be_clickable(locator)))
 
+    def element_to_be_not_clickable(self, locator):
+        return WebDriverWait(self.driver, 20).until_not((EC.element_to_be_clickable(locator)))
+
     # Ожидание проверки наличия данного текста в указанном элементе.
     def wait_on_element_text(self, locator, text_):
-        return WebDriverWait(self.driver, 10).until(EC.text_to_be_present_in_element(locator, text_))
+        return WebDriverWait(self.driver, 20).until(EC.text_to_be_present_in_element(locator, text_))
 
     # Ожидание для проверки, присутствует ли данный текст в элементе
     def wait_on_element_text_value(self, locator, value):
-        return WebDriverWait(self.driver, 10).until(EC.text_to_be_present_in_element_value(locator, value))
+        return WebDriverWait(self.driver, 20).until(EC.text_to_be_present_in_element_value(locator, value))
 
     # Ожидание проверки наличия элемента в DOM страницы. Это не обязательно означает, что элемент виден.
     def presence_of_element_located(self, locator):
-        return WebDriverWait(self.driver, 10).until(EC.presence_of_element_located(locator))
+        return WebDriverWait(self.driver, 30).until(EC.presence_of_element_located(locator))
+
+    def visibility_of_all_elements_located(self, locator):
+        return WebDriverWait(self.driver, 20).until(EC.visibility_of_all_elements_located(locator))
 
     # Метод open_main_page открывает главную страницу сайта
     def open_main_page(self):
@@ -71,6 +77,11 @@ class App:
         driver.get('https://t-front.spacemir.com/account/signin')
         assert "signin" in driver.current_url
 
+    def open_sign_up_page(self):
+        driver = self.driver
+        driver.get('https://t-front.spacemir.com/account/signup')
+        assert "signup" in driver.current_url
+
     def open_ad_page(self, url_products):
         driver = self.driver
         driver.get(url_products)
@@ -81,8 +92,6 @@ class App:
 
     def refresh(self):
         self.driver.refresh()
-
-
 
     @staticmethod
     def path():
