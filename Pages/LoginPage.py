@@ -124,13 +124,17 @@ class LoginPage:
             value = btn.get_attribute('disabled')
             if value == 'true':
                 self.driver.refresh()
-                field_reg = self.driver.find_elements(*Locators.form_signup_field)
-                for fields in field_reg:
-                    type_field = fields.get_attribute('formcontrolname')
-                    if type_field == "email":
-                        fields.send_keys('email@mail.ru')
-                    else:
-                        fields.send_keys('123456')
+            else:
+                print(value is None)
+            field_reg = self.driver.find_elements(*Locators.form_signup_field)
+            for fields in field_reg:
+                type_field = fields.get_attribute('formcontrolname')
+                if type_field == "email":
+                    fields.send_keys('email@mail.ru')
+                elif type_field == "password":
+                    fields.send_keys('123456')
+                elif type_field == "confirmPassword":
+                    fields.send_keys('123')
         except ElementClickInterceptedException:
             print("ddddd")
 
