@@ -29,7 +29,7 @@ class App:
         self.geo = GeoModal(self)
         self.main_page = MainPage(self)
         self.constructor = ConstructPage(self)
-        self.driver.implicitly_wait(2)
+        self.driver.implicitly_wait(20)
 
     # Методы ожидания
 

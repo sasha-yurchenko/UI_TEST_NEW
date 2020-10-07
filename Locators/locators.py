@@ -13,7 +13,7 @@ class Locators(object):
     field_email_for_forgot_password = (By.CSS_SELECTOR, "sm-restore input")
     button_send_email_for_forgot_password = (By.CSS_SELECTOR, 'sm-restore form button')
     text_fail_auth = (By.CSS_SELECTOR, '.sm-tabs-content p')
-    text_fail_field_length = (By.CSS_SELECTOR, 'sm-form-field-errors li')
+    text_fail_field = (By.CSS_SELECTOR, 'sm-form-field-errors li')
     text_fail_password = (By.CSS_SELECTOR, 'form .error')
     tab_signin = (By.CSS_SELECTOR, '.tabs-list li:nth-child(1)')
     tab_signup = (By.CSS_SELECTOR, '.tabs-list li:nth-child(2)')
