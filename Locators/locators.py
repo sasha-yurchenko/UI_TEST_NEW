@@ -15,14 +15,16 @@ class Locators(object):
     text_fail_auth = (By.CSS_SELECTOR, '.sm-tabs-content p')
     text_fail_field = (By.CSS_SELECTOR, 'sm-form-field-errors li')
     text_fail_password = (By.CSS_SELECTOR, 'form .error')
+    text_fail_mail = (By.CSS_SELECTOR, '.sm-tabs-content p')
     tab_signin = (By.CSS_SELECTOR, '.tabs-list li:nth-child(1)')
     tab_signup = (By.CSS_SELECTOR, '.tabs-list li:nth-child(2)')
     form_signup_field = (By.CSS_SELECTOR, 'form .sm-form-field input')
+    form_signin_fields = (By.CSS_SELECTOR, 'sm-signin form input')
     btn_submit_signin = (By.CSS_SELECTOR, "sm-signin form button")
     btn_submit_signup = (By.CSS_SELECTOR, "sm-sign-up form button")
 
     # Profile page objects
-    button_profile_menu_xpath = (By.CSS_SELECTOR, '.user-button img ')
+    button_profile_menu_xpath = (By.CSS_SELECTOR, '.user-button img')
     button_log_out_xpath = (By.CSS_SELECTOR, 'div.buttons :nth-child(5)')
     sidebar_profile = (By.CSS_SELECTOR, '.site-content ul')
     start_block_profile = (By.CSS_SELECTOR, "div.start-block")
@@ -35,6 +37,7 @@ class Locators(object):
     button_apartaments = (By.CSS_SELECTOR, '.site-content sm-profile li:nth-child(1)')
     button_favorite_in_sidebar = (By.CSS_SELECTOR, '.site-content sm-profile li:nth-child(2)')
     welcome_modal = (By.CSS_SELECTOR, 'sm-welcome-modal .info-modal')
+    close_welcome_modal =(By.CSS_SELECTOR, 'i.close-modal')
 
     # Main Headers objects
     button_login = (By.CSS_SELECTOR, 'div.auth-nav a:nth-child(1)')
@@ -45,6 +48,9 @@ class Locators(object):
     drop_down_list_geo = (By.CSS_SELECTOR, 'div.select-wrap i')
     button_favorite = (By.CSS_SELECTOR, '.nav-button a')
     field_geo = (By.CSS_SELECTOR, 'sm-global-geo input')
+    btn_user = (By.CSS_SELECTOR, 'div.user-button')
+    profile_dropdown_menu_btn = (By.CSS_SELECTOR, 'sm-profile-dropdown-menu .buttons p')
+    btn_logout = (By.CSS_SELECTOR, 'sm-profile-dropdown-menu .logout-button p')
 
     # Products page objects
     all_primary_filters = (By.CSS_SELECTOR, '.sm-filters sm-primary-filter .content')

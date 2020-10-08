@@ -5,6 +5,7 @@ from selenium.common.exceptions import ElementClickInterceptedException, NoSuchE
 import pyperclip
 import random
 import string
+import email
 
 
 class LoginPage:
@@ -178,12 +179,12 @@ class LoginPage:
                     print(error is None)
             self.driver.refresh()
             elem = self.driver.find_elements(*Locators.form_signup_field)
+            x = random.choice(string.ascii_letters) * 101
             for fields in elem:
                 type_field = fields.get_attribute('formcontrolname')
                 if type_field == "email":
                     fields.send_keys('Sf_+48,/k@#')
                 elif type_field == "password":
-                    x = random.choice(string.ascii_letters)*101
                     fields.send_keys(x)
                 elif type_field == "confirmPassword":
                     fields.send_keys(x)
@@ -229,8 +230,41 @@ class LoginPage:
                 self.driver.refresh()
             else:
                 print(value is None)
-
+            field_reg = self.driver.find_elements(*Locators.form_signup_field)
+            name = self.app.GenKey()
+            mail = name + str('@mail.com')
+            for fields in field_reg:
+                type_field = fields.get_attribute('formcontrolname')
+                if type_field == "email":
+                    fields.send_keys(mail)
+                elif type_field == "password":
+                    fields.send_keys('123456')
+                elif type_field == "confirmPassword":
+                    fields.send_keys('123456')
+            btn = self.driver.find_element(*Locators.btn_submit_signup)
+            btn.click()
+            if self.app.presence_of_element_located(Locators.welcome_modal):
+                self.driver.find_element(*Locators.close_welcome_modal).click()
+                self.driver.find_element(*Locators.btn_user).click()
+                self.driver.find_element(*Locators.btn_logout).click()
+            else:
+                self.driver.find_element(*Locators.btn_user).click()
+                self.driver.find_element(*Locators.btn_logout).click()
+            btn_reg_form = self.driver.find_element(*Locators.tab_signup)
+            btn_reg_form.click()
+            field_auth = self.driver.find_elements(*Locators.form_signup_field)
+            for fields in field_auth:
+                type_field = fields.get_attribute('formcontrolname')
+                if type_field == "email":
+                    fields.send_keys(mail)
+                elif type_field == "password":
+                    fields.send_keys('123456')
+                elif type_field == "confirmPassword":
+                    fields.send_keys('123456')
+            self.driver.find_element(*Locators.btn_submit_signup).click()
+            error = self.driver.find_element(*Locators.text_fail_mail)
+            text_fail = error.get_attribute('class')
+            if text_fail == "text-failure ng-star-inserted":
+                print(f"{{text_fail}}")
         except ElementClickInterceptedException:
             print("ddddd")
-
-

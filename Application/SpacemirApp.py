@@ -12,6 +12,7 @@ from Pages.MainPage import MainPage
 from Pages.ConsturctPage import ConstructPage
 from selenium.webdriver.common.action_chains import ActionChains
 import os
+import random
 
 
 # инициализируем наш веб-драйвер и делаем из классов объекты страниц.
@@ -92,6 +93,16 @@ class App:
 
     def refresh(self):
         self.driver.refresh()
+
+    @staticmethod
+    def GenKey():
+        array = [chr(i) for i in range(65, 91)]
+        # список array = ['A', 'B', 'C' ... 'Z']
+        random.shuffle(array)
+        key = ""
+        for i in range(5):  # length of key
+            key += array.pop()
+        return key
 
     @staticmethod
     def path():
