@@ -31,7 +31,7 @@ class LoginPage:
             print('Ничего не найдено')
         return False
 
-    def receiving_mail(self):
+    def receiving_mail_A001(self):
         try:
             # Получаем новую почту и регистрируемся в системе
             self.app.open_temp_mail()
@@ -47,7 +47,7 @@ class LoginPage:
         except ElementClickInterceptedException:
             print("Not Found") and self.app.destroy()
 
-    def creation_user(self):
+    def creation_user_A001(self):
         try:
             field_reg = self.driver.find_elements(*Locators.form_signup_field)
             for fields in field_reg:
@@ -111,7 +111,7 @@ class LoginPage:
         except ElementClickInterceptedException:
             self.app.destroy()
 
-    def check_and_activating_user(self):
+    def check_and_activating_user_A001(self):
         btn_on_mail = self.driver.find_elements(*Locators.btn_on_letter)
         for mail in btn_on_mail:
             self.driver.execute_script("return arguments[0].scrollIntoView();", mail)
@@ -137,7 +137,8 @@ class LoginPage:
             except StaleElementReferenceException:
                 print("Not Found") and self.app.destroy()
 
-    def fill_in_reg_fields(self):
+    def Invalid_field_password_A_002(self):
+        # Негативный тест на проверку заполенения полей < 6
         try:
             self.app.open_sign_up_page()
             self.driver.find_element(*Locators.button_submit_geo_position).click()
@@ -160,6 +161,12 @@ class LoginPage:
                 self.driver.refresh()
             else:
                 print(value is None)
+        except TimeoutException:
+            print(f"element is not found")
+
+    def Invalid_field_confirm_password_A_003(self):
+        # Негативный тест на проверку заполенения полей
+        try:
             field_reg = self.driver.find_elements(*Locators.form_signup_field)
             for fields in field_reg:
                 type_field = fields.get_attribute('formcontrolname')
@@ -177,7 +184,17 @@ class LoginPage:
                     continue
                 else:
                     print(error is None)
-            self.driver.refresh()
+            btn = self.driver.find_element(*Locators.btn_submit_signup)
+            value = btn.get_attribute('disabled')
+            if value == 'true':
+                self.driver.refresh()
+            else:
+                print(value is None)
+        except TimeoutException:
+            print(f"element is not found")
+
+    def Invalid_mail_invalid_password_A_004(self):
+        try:
             elem = self.driver.find_elements(*Locators.form_signup_field)
             x = random.choice(string.ascii_letters) * 101
             for fields in elem:
@@ -202,7 +219,11 @@ class LoginPage:
                 self.driver.refresh()
             else:
                 print(value is None)
-            self.driver.refresh()
+        except TimeoutException:
+            print(f"element is not found")
+
+    def Fields_is_emprty_A_005(self):
+        try:
             elem = self.driver.find_elements(*Locators.form_signup_field)
             text = random.choice(string.ascii_letters)
             for fields in elem:
@@ -230,6 +251,11 @@ class LoginPage:
                 self.driver.refresh()
             else:
                 print(value is None)
+        except TimeoutException:
+            print(f"element is not found")
+
+    def Registration_with_existing_mail_A_006(self):
+        try:
             field_reg = self.driver.find_elements(*Locators.form_signup_field)
             name = self.app.GenKey()
             mail = name + str('@mail.com')
@@ -265,6 +291,6 @@ class LoginPage:
             error = self.driver.find_element(*Locators.text_fail_mail)
             text_fail = error.get_attribute('class')
             if text_fail == "text-failure ng-star-inserted":
-                print(f"{{text_fail}}")
+                print(f"{{text_fail is present}}")
         except ElementClickInterceptedException:
             print("ddddd")
