@@ -5,7 +5,6 @@ from selenium.common.exceptions import ElementClickInterceptedException, NoSuchE
 import pyperclip
 import random
 import string
-import email
 
 
 class LoginPage:
@@ -18,18 +17,10 @@ class LoginPage:
         self.password_field_css_selector = Locators.password_field_signin
         self.login_button_xpath = Locators.login_button
         self.text_fail_auth_xpath = Locators.text_fail_auth
-
-    def auth(self, email_field, password_field):
-        try:
-            self.driver.find_element(By.CSS_SELECTOR, self.email_field_css_selector).clear()
-            self.driver.find_element(*Locators.email_field_signin).send_keys(email_field)
-            self.driver.find_element(By.CSS_SELECTOR, self.password_field_css_selector).clear()
-            self.driver.find_element(*Locators.password_field_signin).send_keys(password_field)
-            self.driver.find_element(*Locators.login_button).click()
-            return True
-        except TimeoutException:
-            print('Ничего не найдено')
-        return False
+        self.btn_on_latter = Locators.btn_on_letter
+        self.btn_submit_geo_position = Locators.button_submit_geo_position
+        self.name = self.app.GenKey() + str('@mail.com')
+        self.mail = self.name
 
     def receiving_mail_A001(self):
         try:
@@ -141,7 +132,7 @@ class LoginPage:
         # Негативный тест на проверку заполенения полей < 6
         try:
             self.app.open_sign_up_page()
-            self.driver.find_element(*Locators.button_submit_geo_position).click()
+            self.driver.find_element(*self.btn_submit_geo_position).click()
             field_reg = self.driver.find_elements(*Locators.form_signup_field)
             for fields in field_reg:
                 type_field = fields.get_attribute('formcontrolname')
@@ -257,12 +248,10 @@ class LoginPage:
     def Registration_with_existing_mail_A_006(self):
         try:
             field_reg = self.driver.find_elements(*Locators.form_signup_field)
-            name = self.app.GenKey()
-            mail = name + str('@mail.com')
             for fields in field_reg:
                 type_field = fields.get_attribute('formcontrolname')
                 if type_field == "email":
-                    fields.send_keys(mail)
+                    fields.send_keys(self.mail)
                 elif type_field == "password":
                     fields.send_keys('123456')
                 elif type_field == "confirmPassword":
@@ -282,7 +271,7 @@ class LoginPage:
             for fields in field_auth:
                 type_field = fields.get_attribute('formcontrolname')
                 if type_field == "email":
-                    fields.send_keys(mail)
+                    fields.send_keys(self.mail)
                 elif type_field == "password":
                     fields.send_keys('123456')
                 elif type_field == "confirmPassword":
@@ -292,5 +281,19 @@ class LoginPage:
             text_fail = error.get_attribute('class')
             if text_fail == "text-failure ng-star-inserted":
                 print(f"{{text_fail is present}}")
+            self.driver.refresh()
         except ElementClickInterceptedException:
             print("ddddd")
+
+    def auth(self):
+        self.app.open_sign_page()
+        field_auth = self.driver.find_elements(*Locators.form_signup_field)
+        for fields in field_auth:
+            type_field = fields.get_attribute('formcontrolname')
+            if type_field == "email":
+                fields.send_keys(self.mail)
+            elif type_field == "password":
+                fields.send_keys('123456')
+        self.driver.find_element(*Locators.btn_submit_signin).click()
+        if "profile" in self.driver.current_url:
+            print(f"")

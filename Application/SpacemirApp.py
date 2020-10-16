@@ -21,8 +21,8 @@ import random
 class App:
 
     def __init__(self):
-        browser_options = self.browser_options(options='start-maximized')
-        self.driver = webdriver.Chrome(chrome_options=browser_options)
+        self.driver = webdriver.Chrome()
+        self.driver.maximize_window()
         self.auth = LoginPage(self)
         self.profile = ProfilePage(self)
         self.product = ProductsPage(self)
@@ -31,8 +31,6 @@ class App:
         self.main_page = MainPage(self)
         self.constructor = ConstructPage(self)
         self.driver.implicitly_wait(20)
-
-    # Методы ожидания
 
     # Ожидание проверки наличия элемента в DOM страницы.
     def element_expected_conditions(self, method, locator):
