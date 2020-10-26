@@ -1,6 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from selenium.common.exceptions import NoSuchElementException, TimeoutException, ElementClickInterceptedException
 
 from Pages.LoginPage import LoginPage
@@ -21,8 +22,8 @@ import random
 class App:
 
     def __init__(self):
-        browser_options = self.browser_options(options='start-maximized')
-        self.driver = webdriver.Chrome(chrome_options=browser_options)
+        self.driver = webdriver.Chrome()
+        self.driver.maximize_window()
         self.auth = LoginPage(self)
         self.profile = ProfilePage(self)
         self.product = ProductsPage(self)
@@ -115,5 +116,5 @@ class App:
             chrome_options.add_argument('--headless')
             return chrome_options
         elif options == 'start-maximized':
-            chrome_options.add_argument('--start-maximized')
+            chrome_options.add_argument('--kiosk')
             return chrome_options

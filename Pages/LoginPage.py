@@ -19,18 +19,6 @@ class LoginPage:
         self.login_button_xpath = Locators.login_button
         self.text_fail_auth_xpath = Locators.text_fail_auth
 
-    def auth(self, email_field, password_field):
-        try:
-            self.driver.find_element(By.CSS_SELECTOR, self.email_field_css_selector).clear()
-            self.driver.find_element(*Locators.email_field_signin).send_keys(email_field)
-            self.driver.find_element(By.CSS_SELECTOR, self.password_field_css_selector).clear()
-            self.driver.find_element(*Locators.password_field_signin).send_keys(password_field)
-            self.driver.find_element(*Locators.login_button).click()
-            return True
-        except TimeoutException:
-            print('Ничего не найдено')
-        return False
-
     def receiving_mail_A001(self):
         try:
             # Получаем новую почту и регистрируемся в системе
@@ -71,12 +59,15 @@ class LoginPage:
                 mail_gift = self.driver.find_element(*Locators.mail_two)
                 gift = mail_gift.text
                 if activation == "Мы очень рады, что вы стали частью SPACEMIR!":
+                    self.driver.execute_script("return arguments[0].scrollIntoView();", mail_act)
                     self.driver.find_element(*Locators.mail_one).click()
                 elif gift == "Мы очень рады, что вы стали частью SPACEMIR!":
+                    self.driver.execute_script("return arguments[0].scrollIntoView();", mail_gift)
                     self.driver.find_element(*Locators.mail_two).click()
                 else:
                     self.driver.find_element(*Locators.btn_update)
                     self.app.wait_on_element_text(Locators.mail_one, "Мы очень рады, что вы стали частью SPACEMIR!")
+                    self.driver.execute_script("return arguments[0].scrollIntoView();", mail_act)
                     self.driver.find_element(*Locators.mail_one).click()
             except NoSuchElementException:
                 print(f"Mail activation is not found")
