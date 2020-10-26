@@ -33,8 +33,6 @@ class App:
         self.constructor = ConstructPage(self)
         self.driver.implicitly_wait(20)
 
-    # Методы ожидания
-
     # Ожидание проверки наличия элемента в DOM страницы.
     def element_expected_conditions(self, method, locator):
         WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((method, locator)))

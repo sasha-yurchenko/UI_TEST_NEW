@@ -48,7 +48,7 @@ class Locators(object):
     drop_down_list_geo = (By.CSS_SELECTOR, 'div.select-wrap i')
     button_favorite = (By.CSS_SELECTOR, '.nav-button a')
     field_geo = (By.CSS_SELECTOR, 'sm-global-geo input')
-    btn_user = (By.CSS_SELECTOR, 'div.user-button')
+    btn_user = (By.CSS_SELECTOR, 'button .avatar')
     profile_dropdown_menu_btn = (By.CSS_SELECTOR, 'sm-profile-dropdown-menu .buttons p')
     btn_logout = (By.CSS_SELECTOR, 'sm-profile-dropdown-menu .logout-button p')
 
