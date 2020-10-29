@@ -7,7 +7,6 @@ class Locators(object):
     password_field_signin = (By.CSS_SELECTOR, "sm-signin div.sm-form-field:nth-child(2) input")
     email_field_signup = (By.CSS_SELECTOR, "form .sm-form-field:nth-child(1) input")
     password_field_signup = (By.CSS_SELECTOR, "form .sm-form-field:nth-child(2) input")
-    confirm_password_signup = (By.CSS_SELECTOR, "")
     login_button = (By.CSS_SELECTOR, 'sm-signin form button')
     forgot_password = (By.CSS_SELECTOR, 'a.link')
     field_email_for_forgot_password = (By.CSS_SELECTOR, "sm-restore input")
@@ -22,6 +21,12 @@ class Locators(object):
     form_signin_fields = (By.CSS_SELECTOR, 'sm-signin form input')
     btn_submit_signin = (By.CSS_SELECTOR, "sm-signin form button")
     btn_submit_signup = (By.CSS_SELECTOR, "sm-sign-up form button")
+    toast_container = (By.ID, "toast-container")
+    btn_recovery_mail = (By.CSS_SELECTOR, ".text-center a")
+    input_mail_recovery = (By.CSS_SELECTOR, "sm-restore input")
+    btn_send_recovery_mail = (By.CSS_SELECTOR, "sm-restore button")
+    btn_back_to_entry = (By.CSS_SELECTOR, "sm-restore a")
+    btn_submit_change_password = (By.CSS_SELECTOR, "sm-reset-password button")
 
     # Profile page objects
     button_profile_menu_xpath = (By.CSS_SELECTOR, '.user-button img')
@@ -37,7 +42,7 @@ class Locators(object):
     button_apartaments = (By.CSS_SELECTOR, '.site-content sm-profile li:nth-child(1)')
     button_favorite_in_sidebar = (By.CSS_SELECTOR, '.site-content sm-profile li:nth-child(2)')
     welcome_modal = (By.CSS_SELECTOR, 'sm-welcome-modal .info-modal')
-    close_welcome_modal =(By.CSS_SELECTOR, 'i.close-modal')
+    close_welcome_modal = (By.CSS_SELECTOR, 'i.close-modal')
 
     # Main Headers objects
     button_login = (By.CSS_SELECTOR, 'div.auth-nav a:nth-child(1)')
@@ -123,6 +128,7 @@ class Locators(object):
     list_mail = (By.CSS_SELECTOR, ".inbox-dataList li .col-box:nth-child(2) a")
     btn_on_letter = (By.CSS_SELECTOR, "td a")
     btn_update = (By.ID, "click-to-refresh")
+    btn_recovery_on_mail = (By.CSS_SELECTOR, "table .button-td a ")
 
     # Page_email_confirm
     email_confirm = (By.CSS_SELECTOR, "sm-email-confirm .flex")

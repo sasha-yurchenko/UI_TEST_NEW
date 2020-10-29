@@ -66,20 +66,20 @@ class App:
     # Метод open_main_page открывает главную страницу сайта
     def open_main_page(self):
         driver = self.driver
-        driver.get('https://t-front.spacemir.com/')
+        driver.get('https://d-front.spacemir.com/')
 
     def open_temp_mail(self):
         driver = self.driver
         driver.get('https://temp-mail.org/ru')
 
-    def open_sign_page(self):
+    def open_sign_in_page(self):
         driver = self.driver
-        driver.get('https://t-front.spacemir.com/account/signin')
+        driver.get('https://d-front.spacemir.com/account/signin')
         assert "signin" in driver.current_url
 
     def open_sign_up_page(self):
         driver = self.driver
-        driver.get('https://t-front.spacemir.com/account/signup')
+        driver.get('https://d-front.spacemir.com/account/signup')
         assert "signup" in driver.current_url
 
     def open_ad_page(self, url_products):
