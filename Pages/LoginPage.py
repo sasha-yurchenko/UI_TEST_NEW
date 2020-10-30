@@ -17,8 +17,13 @@ class LoginPage:
         self.mail = self.name
 
         self.auth_mail = self.mail
+        self.text_alert_ru = "На ваш e-mail была направлена инструкция для смены пароля. Пожалуйста, проверьте свой e-mail."
+        self.text_alert_br = "Uma instrução foi enviada para o seu e-mail para alterar a senha. Por favor, verifique seu e-mail."
+        self.text_alert_error_ru = "Ошибка при смене пароля"
+        self.text_alert_success_change_password = "Пароль успешно обновлен"
 
         self.toast_container = Locators.toast_container
+        self.toast_container_text = Locators.toast_container_text
         self.email_field_signin = Locators.email_field_signin
         self.password_field_css_selector = Locators.password_field_signin
         self.login_button_xpath = Locators.login_button
@@ -40,10 +45,12 @@ class LoginPage:
         self.tab_signup = Locators.tab_signup
         self.form_signup_field = Locators.form_signup_field
         self.form_signin_fields = Locators.form_signin_fields
+        self.form_restore_password = Locators.form_restore_password
         self.btn_submit_signin = Locators.btn_submit_signin
         self.btn_submit_signup = Locators.btn_submit_signup
         self.btn_send_recovery_mail = Locators.btn_send_recovery_mail
         self.btn_submit_change_password = Locators.btn_submit_change_password
+        self.list_all_mail = Locators.list_all_mail
 
     def receiving_mail(self):
         try:
@@ -88,18 +95,25 @@ class LoginPage:
         # Проверяем наличие писем и переходим к нему
         try:
             self.app.presence_of_element_located(Locators.mail_one)
-            mail_act = self.driver.find_element(*Locators.mail_one)
-            activation = mail_act.text
-            mail_gift = self.driver.find_element(*Locators.mail_two)
-            gift = mail_gift.text
-            if activation == "Мы очень рады, что вы стали частью SPACEMIR!":
-                self.driver.find_element(*Locators.mail_one).click()
-            elif gift == "Мы очень рады, что вы стали частью SPACEMIR!":
-                self.driver.find_element(*Locators.mail_two).click()
+            list_mail = self.driver.find_elements(*self.list_all_mail)
+            if len(list_mail) > 2:
+                mail_act = self.driver.find_element(*Locators.mail_one)
+                activation = mail_act.text
+                mail_gift = self.driver.find_element(*Locators.mail_two)
+                gift = mail_gift.text
+                if activation == "Мы очень рады, что вы стали частью SPACEMIR!":
+                    self.driver.find_element(*Locators.mail_one).click()
+                elif gift == "Мы очень рады, что вы стали частью SPACEMIR!":
+                    self.driver.find_element(*Locators.mail_two).click()
+                else:
+                    self.driver.find_element(*Locators.btn_update)
+                    self.app.wait_on_element_text(Locators.mail_one, "Мы очень рады, что вы стали частью SPACEMIR!")
+                    self.driver.find_element(*Locators.mail_one).click()
             else:
-                self.driver.find_element(*Locators.btn_update)
-                self.app.wait_on_element_text(Locators.mail_one, "Мы очень рады, что вы стали частью SPACEMIR!")
-                self.driver.find_element(*Locators.mail_one).click()
+                mail_act = self.driver.find_element(*Locators.mail_one)
+                activation = mail_act.text
+                if activation == "Мы очень рады, что вы стали частью SPACEMIR!":
+                    self.driver.find_element(*Locators.mail_one).click()
         except NoSuchElementException:
             print(f"Mail activation is not found")
         btn_on_mail = self.driver.find_elements(*Locators.btn_on_letter)
@@ -368,6 +382,8 @@ class LoginPage:
 
     def void_and_send_mail_for_password_recovery(self):
         try:
+            text_ru = str(self.text_alert_ru)
+            text_br = str(self.text_alert_br)
             self.app.presence_of_element_located(self.email_field_signin)
             self.driver.find_element(*self.btn_recovery_mail).click()
             field = self.driver.find_element(*self.input_mail_recovery)
@@ -376,11 +392,16 @@ class LoginPage:
             btn_disable = btn_send.get_attribute('disabled')
             if btn_disable != "true":
                 btn_send.click()
+            if self.app.wait_on_element_text(self.toast_container, text_ru):
+                print(text_ru)
+            elif self.app.wait_on_element_text(self.toast_container, text_br):
+                print(text_br)
         except ElementClickInterceptedException:
             return False
 
     def check_mail_recovery_on_delivery(self):
         try:
+            text_alert = str(self.text_alert_success_change_password)
             self.driver.switch_to_window(self.driver.window_handles[0])
             self.app.presence_of_element_located(Locators.mail_one)
             mail = self.driver.find_element(*Locators.mail_one)
@@ -390,19 +411,40 @@ class LoginPage:
                 btn = self.driver.find_element(*Locators.btn_recovery_on_mail)
                 self.driver.execute_script("return arguments[0].scrollIntoView();", btn)
                 btn.click()
+                self.driver.close()
             else:
                 self.driver.find_element(*Locators.btn_update).click()
                 self.app.presence_of_element_located(Locators.mail_one)
-                if
+                if recovery_mail == "Восстановление пароля":
+                    mail.click()
+                    btn = self.driver.find_element(*Locators.btn_recovery_on_mail)
+                    self.driver.execute_script("return arguments[0].scrollIntoView();", btn)
+                    btn.click()
+                    self.driver.close()
             windows = self.driver.window_handles
             self.driver.switch_to.window(windows[1])
+            assert "reset-password" in self.driver.current_url
             new_pass = self.driver.find_elements(*self.form_signup_field)
             for fields in new_pass:
                 fields.send_keys("string")
-            btn_sum = self.driver.find_element(*self.btn_submit_change_password).click()
+            btn_sum = self.driver.find_element(*self.btn_submit_change_password)
+            btn_sum.click()
+            self.app.wait_on_element_text(self.toast_container, text_alert)
+            print(text_alert)
         except ElementClickInterceptedException:
-            print(btn_sum, "not clicable")
+            print(text_alert + "not found")
 
-
-
-
+    def checking_error_output_restore(self):
+        try:
+            field = self.driver.find_element(*self.input_mail_recovery)
+            field.click()
+            btn = self.driver.find_element(*self.btn_send_recovery_mail)
+            form = self.driver.find_element(*self.form_restore_password)
+            form.click()
+            value = btn.get_attribute("disabled")
+            elem = self.driver.find_element(*self.text_fail_field)
+            text = elem.text
+            if value == "true" and self.app.presence_of_element_located(self.text_fail_field):
+                print(text)
+        except ElementClickInterceptedException:
+            print(btn is not "click")

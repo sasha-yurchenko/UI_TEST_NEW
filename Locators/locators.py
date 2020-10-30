@@ -19,9 +19,9 @@ class Locators(object):
     tab_signup = (By.CSS_SELECTOR, '.tabs-list li:nth-child(2)')
     form_signup_field = (By.CSS_SELECTOR, 'form .sm-form-field input')
     form_signin_fields = (By.CSS_SELECTOR, 'sm-signin form input')
+    form_restore_password = (By.CSS_SELECTOR, 'div.fake-modal')
     btn_submit_signin = (By.CSS_SELECTOR, "sm-signin form button")
     btn_submit_signup = (By.CSS_SELECTOR, "sm-sign-up form button")
-    toast_container = (By.ID, "toast-container")
     btn_recovery_mail = (By.CSS_SELECTOR, ".text-center a")
     input_mail_recovery = (By.CSS_SELECTOR, "sm-restore input")
     btn_send_recovery_mail = (By.CSS_SELECTOR, "sm-restore button")
@@ -129,6 +129,11 @@ class Locators(object):
     btn_on_letter = (By.CSS_SELECTOR, "td a")
     btn_update = (By.ID, "click-to-refresh")
     btn_recovery_on_mail = (By.CSS_SELECTOR, "table .button-td a ")
+    list_all_mail = (By.CSS_SELECTOR, ".inbox-dataList li")
 
     # Page_email_confirm
     email_confirm = (By.CSS_SELECTOR, "sm-email-confirm .flex")
+
+    # All_alerts
+    toast_container = (By.CSS_SELECTOR, ".toast-container div:nth-child(1)")
+    toast_container_text = (By.CSS_SELECTOR, ".toast-container div:nth-child(2)")

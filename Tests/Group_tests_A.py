@@ -35,3 +35,9 @@ def test_C1(sm_2_fixture):
     sm_2_fixture.auth.check_welcom_modal_and_log_out()
     sm_2_fixture.auth.void_and_send_mail_for_password_recovery()
     sm_2_fixture.auth.check_mail_recovery_on_delivery()
+
+
+def test_C2(sm_2_fixture):
+    sm_2_fixture.open_restore_password_page()
+    sm_2_fixture.auth.checking_error_output_restore()
+
