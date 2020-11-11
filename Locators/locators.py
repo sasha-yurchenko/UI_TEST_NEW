@@ -130,6 +130,7 @@ class Locators(object):
     btn_update = (By.ID, "click-to-refresh")
     btn_recovery_on_mail = (By.CSS_SELECTOR, "table .button-td a ")
     list_all_mail = (By.CSS_SELECTOR, ".inbox-dataList li")
+    centre_banner = (By.CSS_SELECTOR, "div.closeBtn")
 
     # Page_email_confirm
     email_confirm = (By.CSS_SELECTOR, "sm-email-confirm .flex")

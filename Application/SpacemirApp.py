@@ -98,6 +98,12 @@ class App:
     def refresh(self):
         self.driver.refresh()
 
+    def execute_script_window_open(self, page):
+        return self.driver.execute_script('''window.open("'''+str(page)+'''");''')
+
+    def switch_to_window_1(self):
+        return self.driver.switch_to.window(self.driver.window_handles[1])
+
     @staticmethod
     def GenKey():
         array = [chr(i) for i in range(65, 91)]

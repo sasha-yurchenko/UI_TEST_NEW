@@ -39,5 +39,6 @@ def test_C1(sm_2_fixture):
 
 def test_C2(sm_2_fixture):
     sm_2_fixture.open_restore_password_page()
+    sm_2_fixture.geo.click_submit_geo_position()
     sm_2_fixture.auth.checking_error_output_restore()
 
