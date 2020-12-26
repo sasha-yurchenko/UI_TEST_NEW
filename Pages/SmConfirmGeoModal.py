@@ -49,5 +49,6 @@ class GeoModal:
             return False and self.app.destroy()
 
     def click_submit_geo_position(self):
-        self.driver.find_element(*Locators.button_submit_geo_position).click()
+        btn = self.app.element_to_be_clickable(Locators.button_submit_geo_position)
+        btn.click()
 

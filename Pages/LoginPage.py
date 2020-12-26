@@ -7,7 +7,6 @@ import pyperclip
 import random
 import string
 
-
 class LoginPage:
 
     def __init__(self, app):
@@ -60,20 +59,17 @@ class LoginPage:
 
     def receiving_mail(self):
         try:
-            # Получаем новую почту и регистрируемся в системе
-            self.app.open_temp_mail()
             # Проверяем и закрываем верхний алерт
-            if self.app.presence_of_element_located(self.banner_temp_mail):
-                self.driver.find_element(*self.banner_temp_mail).click()
+            # if self.app.presence_of_element_located(self.banner_temp_mail):
+            # self.driver.find_element(*self.banner_temp_mail).click()
             button = self.app.element_to_be_clickable(Locators.btn_copy_mail)
             button.click()
             self.app.wait_on_element_text(Locators.copy_mail, "Скопировано")
             self.app.execute_script_window_open('https://t-front.spacemir.com/account/signup')
             self.app.switch_to_window_1()
             assert "signup" in self.driver.current_url
-            self.driver.find_element(*Locators.button_submit_geo_position).click()
-        except ElementClickInterceptedException:
-            print("Not Found") and self.app.destroy()
+        except NoSuchElementException:
+            return False
 
     def creation_user(self):
         try:
@@ -84,7 +80,8 @@ class LoginPage:
                     fields.send_keys(pyperclip.paste())
                 else:
                     fields.send_keys('123456')
-            self.driver.find_element(*self.btn_submit_signup).click()
+            btn = self.app.element_to_be_clickable(self.btn_submit_signup)
+            btn.click()
         except NoSuchElementException:
             return False and self.app.destroy()
 
@@ -93,7 +90,7 @@ class LoginPage:
             # Ожидаем появления модалки приветствия и переходим к письмам
             if self.app.presence_of_element_located(Locators.welcome_modal):
                 self.driver.close()
-                self.driver.switch_to_window(self.driver.window_handles[0])
+                self.driver.switch_to.window(self.driver.window_handles[0])
             else:
                 print("Welcome_modal is not displayed!")
         except NoSuchElementException:
@@ -125,23 +122,23 @@ class LoginPage:
         except NoSuchElementException:
             print(f"Mail activation is not found")
             # Проверяем и закрываем верхний алерт
-        if self.app.presence_of_element_located(self.banner_temp_mail):
-            self.driver.find_element(*self.banner_temp_mail).click()
+        ##if self.app.presence_of_element_located(self.banner_temp_mail):
+        ##self.driver.find_element(*self.banner_temp_mail).click()
         btn_on_mail = self.driver.find_elements(*Locators.btn_on_letter)
         for mail in btn_on_mail:
             self.driver.execute_script("return arguments[0].scrollIntoView();", mail)
             mail.click()
-            self.driver.switch_to_window(self.driver.window_handles[1])
+            self.driver.switch_to.window(self.driver.window_handles[1])
             try:
                 if "profile" in self.driver.current_url:
                     self.driver.close()
-                    self.driver.switch_to_window(self.driver.window_handles[0])
+                    self.driver.switch_to.window(self.driver.window_handles[0])
                 elif "products" in self.driver.current_url:
                     self.driver.close()
-                    self.driver.switch_to_window(self.driver.window_handles[0])
+                    self.driver.switch_to.window(self.driver.window_handles[0])
                 elif "catalog" in self.driver.current_url:
                     self.driver.close()
-                    self.driver.switch_to_window(self.driver.window_handles[0])
+                    self.driver.switch_to.window(self.driver.window_handles[0])
                 elif "email-confirm" in self.driver.current_url:
                     self.app.wait_on_element_text(Locators.email_confirm,
                                                   "Поздравляем! Ваш аккаунт активирован, теперь вы можете публиковать свои объявления в общем доступе")
@@ -151,7 +148,7 @@ class LoginPage:
                     self.app.refresh()
                     self.app.presence_of_element_located(Locators.top_block_profile)
                     self.driver.close()
-                    self.driver.switch_to_window(self.driver.window_handles[0])
+                    self.driver.switch_to.window(self.driver.window_handles[0])
                     continue
             except StaleElementReferenceException:
                 continue
@@ -161,17 +158,17 @@ class LoginPage:
         for mail in btn_on_mail:
             self.driver.execute_script("return arguments[0].scrollIntoView();", mail)
             mail.click()
-            self.driver.switch_to_window(self.driver.window_handles[1])
+            self.driver.switch_to.window(self.driver.window_handles[1])
             try:
                 if "profile" in self.driver.current_url:
                     self.driver.close()
-                    self.driver.switch_to_window(self.driver.window_handles[0])
+                    self.driver.switch_to.window(self.driver.window_handles[0])
                 elif "products" in self.driver.current_url:
                     self.driver.close()
-                    self.driver.switch_to_window(self.driver.window_handles[0])
+                    self.driver.switch_to.window(self.driver.window_handles[0])
                 elif "catalog" in self.driver.current_url:
                     self.driver.close()
-                    self.driver.switch_to_window(self.driver.window_handles[0])
+                    self.driver.switch_to.window(self.driver.window_handles[0])
                 elif "email-confirm" in self.driver.current_url:
                     self.app.wait_on_element_text(Locators.email_confirm,
                                                   "Поздравляем! Ваш аккаунт активирован, теперь вы можете публиковать свои объявления в общем доступе")
@@ -185,7 +182,6 @@ class LoginPage:
     def Invalid_field_password(self):
         # Негативный тест на проверку заполенения полей < 6
         try:
-            self.driver.find_element(*self.btn_submit_geo_position).click()
             field_reg = self.driver.find_elements(*self.form_signup_field)
             for fields in field_reg:
                 type_field = fields.get_attribute('formcontrolname')
@@ -200,8 +196,8 @@ class LoginPage:
                 elif error.text == 'As senhas não correspondem':
                     continue
             btn = self.driver.find_element(*self.btn_submit_signup)
-            value = btn.get_attribute('disabled')
-            if value == 'true':
+            value = btn.get_attribute('type')
+            if value == 'submit':
                 self.driver.refresh()
             else:
                 print(value is None)
@@ -229,8 +225,8 @@ class LoginPage:
                 else:
                     print(error is None)
             btn = self.driver.find_element(*self.btn_submit_signup)
-            value = btn.get_attribute('disabled')
-            if value == 'true':
+            value = btn.get_attribute('type')
+            if value == 'submit':
                 self.driver.refresh()
             else:
                 print(value is None)
@@ -262,8 +258,8 @@ class LoginPage:
                 else:
                     print(error.text + " " + f"не корректный перевод") and self.app.destroy()
             btn = self.driver.find_element(*self.btn_submit_signup)
-            value = btn.get_attribute('disabled')
-            if value == 'true':
+            value = btn.get_attribute('type')
+            if value == 'submit':
                 self.driver.refresh()
             else:
                 print(value is None)
@@ -353,7 +349,6 @@ class LoginPage:
             print(ElementClickInterceptedException)
 
     def auth(self):
-        self.app.open_sign_in_page()
         field_auth = self.driver.find_elements(*self.form_signup_field)
         for fields in field_auth:
             type_field = fields.get_attribute('formcontrolname')
@@ -389,7 +384,7 @@ class LoginPage:
             # Ожидаем появления модалки приветствия и переходим к письмам
             if self.app.presence_of_element_located(Locators.welcome_modal):
                 self.driver.find_element(*Locators.close_welcome_modal).click()
-                self.driver.switch_to_window(self.driver.window_handles[0])
+                self.driver.switch_to.window(self.driver.window_handles[0])
             else:
                 print("Welcome_modal is not displayed!")
         except NoSuchElementException:
@@ -416,9 +411,7 @@ class LoginPage:
 
     def check_mail_recovery_on_delivery(self):
         try:
-            text_alert_ru = str(self.text_alert_success_change_password_ru)
-            text_alert_br = str(self.text_alert_success_change_password_br)
-            self.driver.switch_to_window(self.driver.window_handles[0])
+            self.driver.switch_to.window(self.driver.window_handles[0])
             self.driver.refresh()
             if self.app.presence_of_element_located(self.banner_temp_mail):
                 self.driver.find_element(*self.banner_temp_mail).click()
@@ -444,6 +437,13 @@ class LoginPage:
             windows = self.driver.window_handles
             self.driver.switch_to.window(windows[1])
             assert "reset-password" in self.driver.current_url
+        except TimeoutException:
+            return False
+
+    def Fill_in_the_fields_for_password_recovery(self):
+        try:
+            text_alert_ru = str(self.text_alert_success_change_password_ru)
+            text_alert_br = str(self.text_alert_success_change_password_br)
             new_pass = self.driver.find_elements(*self.form_signup_field)
             for fields in new_pass:
                 fields.send_keys("string")
@@ -467,8 +467,9 @@ class LoginPage:
             elem = self.driver.find_element(*self.text_fail_field)
             text = elem.text
             if value == "true" and self.app.presence_of_element_located(self.text_fail_field):
+                self.driver.save_screenshot("sadadad.jpg")
                 print(text + f"present")
             elif value == "true" and self.app.presence_of_element_located(self.text_fail_field):
                 print(text + f"present")
         except ElementClickInterceptedException:
-            print(btn is not "click")
+            print(btn != "click")

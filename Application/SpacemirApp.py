@@ -66,7 +66,7 @@ class App:
     # Метод open_main_page открывает главную страницу сайта
     def open_main_page(self):
         driver = self.driver
-        driver.get('https://t-front.spacemir.com/')
+        driver.get('https://t-front.spacemir.com')
 
     def open_temp_mail(self):
         driver = self.driver
@@ -99,7 +99,7 @@ class App:
         self.driver.refresh()
 
     def execute_script_window_open(self, page):
-        return self.driver.execute_script('''window.open("'''+str(page)+'''");''')
+        return self.driver.execute_script('''window.open("''' + str(page) + '''");''')
 
     def switch_to_window_1(self):
         return self.driver.switch_to.window(self.driver.window_handles[1])
