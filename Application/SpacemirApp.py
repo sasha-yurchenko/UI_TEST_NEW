@@ -14,6 +14,7 @@ from Pages.ConsturctPage import ConstructPage
 from selenium.webdriver.common.action_chains import ActionChains
 import os
 import random
+from webdriver_manager.chrome import ChromeDriverManager
 
 
 # инициализируем наш веб-драйвер и делаем из классов объекты страниц.
@@ -22,7 +23,7 @@ import random
 class App:
 
     def __init__(self):
-        self.driver = webdriver.Chrome()
+        self.driver = webdriver.Chrome(ChromeDriverManager().install())
         self.driver.maximize_window()
         self.auth = LoginPage(self)
         self.profile = ProfilePage(self)

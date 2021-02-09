@@ -7,6 +7,7 @@ import pyperclip
 import random
 import string
 
+
 class LoginPage:
 
     def __init__(self, app):

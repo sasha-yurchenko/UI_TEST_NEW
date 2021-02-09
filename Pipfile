@@ -1,0 +1,17 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+flask = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.9"
+
+selenium~=3.141.0
+pyperclip~=1.8.1
+pytest~=6.2.2
+urllib3~=1.26.3
