@@ -1,38 +1,52 @@
 from selenium import webdriver
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
-from selenium.common.exceptions import NoSuchElementException, TimeoutException, ElementClickInterceptedException
+from webdriver_manager.chrome import ChromeDriverManager
 
 from Pages.LoginPage import LoginPage
 from Pages.ProfilePage import ProfilePage
 from Pages.ProductsPage import ProductsPage
 from Pages.MainHeader import Header
-from Pages.SmConfirmGeoModal import GeoModal
-from Pages.MainPage import MainPage
+from Pages.ConfirmGeoModal import GeoModal
 from Pages.ConsturctPage import ConstructPage
-from selenium.webdriver.common.action_chains import ActionChains
+from Data.All_links import Links
 import os
 import random
-from webdriver_manager.chrome import ChromeDriverManager
-
-
-# инициализируем наш веб-драйвер и делаем из классов объекты страниц.
+import pytest
 
 
 class App:
 
     def __init__(self):
-        self.driver = webdriver.Chrome(ChromeDriverManager().install())
-        self.driver.maximize_window()
+        self.driver = webdriver.Chrome()
+        # browser_options_firefox = self.browser_options_firefox(options='web_enabled')
+        # self.driver = webdriver.Firefox(firefox_options=browser_options_firefox)
         self.auth = LoginPage(self)
         self.profile = ProfilePage(self)
         self.product = ProductsPage(self)
         self.head = Header(self)
         self.geo = GeoModal(self)
-        self.main_page = MainPage(self)
         self.constructor = ConstructPage(self)
-        self.driver.implicitly_wait(20)
+        self.links = Links()
+        self.driver.implicitly_wait(10)
+
+    def do_click(self, by_locator):
+        WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(by_locator)).click()
+
+    def do_send_keys(self, by_locator, text):
+        WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(by_locator)).send_keys(text)
+
+    def get_element_text(self, by_locator):
+        element = WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(by_locator))
+        return element.text
+
+    def is_visible(self, by_locator):
+        element = WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(by_locator))
+        return bool(element)
+
+    def get_title(self, title):
+        WebDriverWait(self.driver, 10).until(EC.title_is(title))
+        return self.driver.title
 
     # Ожидание проверки наличия элемента в DOM страницы.
     def element_expected_conditions(self, method, locator):
@@ -67,25 +81,25 @@ class App:
     # Метод open_main_page открывает главную страницу сайта
     def open_main_page(self):
         driver = self.driver
-        driver.get('https://t-front.spacemir.com')
+        driver.get(self.links.page_main)
 
     def open_temp_mail(self):
         driver = self.driver
-        driver.get('https://temp-mail.org/ru')
+        driver.get(self.links.page_temp_mail)
 
     def open_sign_in_page(self):
         driver = self.driver
-        driver.get('https://t-front.spacemir.com/account/signin')
+        driver.get()
         assert "signin" in driver.current_url
 
     def open_restore_password_page(self):
         driver = self.driver
-        driver.get('https://t-front.spacemir.com/account/restore')
+        driver.get(self.links.page_restore_password)
         assert "restore" in driver.current_url
 
     def open_sign_up_page(self):
         driver = self.driver
-        driver.get('https://t-front.spacemir.com/account/signup')
+        driver.get(self.links.page_sign_up)
         assert "signup" in driver.current_url
 
     def open_ad_page(self, url_products):
@@ -120,11 +134,20 @@ class App:
         return os.path.abspath(os.path.dirname('D:\Projects Spacemir V2\sm-test\Tests'))
 
     @staticmethod
-    def browser_options(options):
+    def browser_options_chrome(option):
         chrome_options = webdriver.ChromeOptions()
-        if options == 'headless':
+        if option == 'headless':
             chrome_options.add_argument('--headless')
             return chrome_options
-        elif options == 'start-maximized':
+        elif option == 'start-maximized':
             chrome_options.add_argument('--kiosk')
             return chrome_options
+
+    @staticmethod
+    def browser_options_firefox(options):
+        firefox_options = webdriver.FirefoxOptions()
+        if options == 'web_enabled':
+            firefox_options.set_preference('dom.webdriver.enabled', False)
+            firefox_options.set_preference('dom.webnotifications.enables', False)
+            firefox_options.headless = True
+            return firefox_options

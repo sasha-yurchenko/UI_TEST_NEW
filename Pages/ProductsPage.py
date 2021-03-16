@@ -4,7 +4,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.common.action_chains import ActionChains
 
-from Locators.locators import Locators
+from Data.Locators import Locators
 
 
 class ProductsPage:
@@ -24,17 +24,17 @@ class ProductsPage:
 
 
     #def wait_for_clickable(self):
-        #return self.app.element_expected_conditions(*Locators.choice_filter)
+        #return self.app.element_expected_conditions(*Data.choice_filter)
 
     #def tab_exist_product_page(self):
-        #tab_1 = self.driver.find_element(*Locators.tab_main)
+        #tab_1 = self.driver.find_element(*Data.tab_main)
         #if self.app.visibility_element_expected_conditions(tab_1):
             #return True
         #else:
             #return False and self.app.destroy()
 
     #def button_number_wait(self):
-        #element = self.driver.find_element(*Locators.button_number)
+        #element = self.driver.find_element(*Data.button_number)
         #if self.app.visibility_element_expected_conditions(element):
             #return True
         #else:
@@ -42,7 +42,7 @@ class ProductsPage:
 
     #def check_value_on_title(self):
         #try:
-            #self.app.text_to_be_present_in_element_value(*Locators.label_ads_short_card), 'Nissan'
+            #self.app.text_to_be_present_in_element_value(*Data.label_ads_short_card), 'Nissan'
             #return True
         #except NoSuchElementException:
             #return False and self.app.destroy()
@@ -78,7 +78,7 @@ class ProductsPage:
         self.driver.find_element_by_xpath(*Locators.value_drop_down).click()
 
     #def close_filter_drop_down(self):
-        #self.driver.find_element_by_xpath(*Locators.click_on_page).click()
+        #self.driver.find_element_by_xpath(*Data.click_on_page).click()
 
     def check_availability_elements_on_short_card(self):
         try:

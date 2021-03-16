@@ -1,6 +1,6 @@
-from Locators.locators import Locators
-from Translator.Text_Translation_RU import TranslateRU
-from Translator.Text_Translation_BR import TranslateBr
+from Data.Locators import Locators
+from Data.Text_Translation_RU import TranslateRU
+from Data.Text_Translation_BR import TranslateBr
 from selenium.common.exceptions import ElementClickInterceptedException, NoSuchElementException, TimeoutException, \
     StaleElementReferenceException
 import pyperclip

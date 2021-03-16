@@ -90,7 +90,6 @@ class Locators(object):
     geo_place_name = (By.CSS_SELECTOR, '.geo-place span')
 
     # Construct Page
-
     select_main_category = (By.CSS_SELECTOR, 'div.main-categories :nth-child(1)')
     select_nested_category = (By.CSS_SELECTOR, 'div.category-list :nth-child(1)')
     category_path = (By.CSS_SELECTOR, 'div.displayed-category-path span:nth-child(1)')

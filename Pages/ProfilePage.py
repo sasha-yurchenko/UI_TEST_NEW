@@ -1,4 +1,4 @@
-from Locators.locators import Locators
+from Data.Locators import Locators
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.by import By
 

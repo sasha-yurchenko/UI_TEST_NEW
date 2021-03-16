@@ -1,4 +1,4 @@
-from Locators.locators import Locators
+from Data.Locators import Locators
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException, TimeoutException, ElementClickInterceptedException, \
     ScreenshotException
